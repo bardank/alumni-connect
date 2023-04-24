@@ -1,4 +1,4 @@
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 
 export default function Home() {
   return (
@@ -57,7 +57,7 @@ export default function Home() {
 
 const PurposeCard = ({ text, icon }) => {
   return (
-    <div Name="border-primary border-2 hover:border-blue-500 bg-white p-4 rounded-xl">
+    <div className="border-primary border-2 hover:border-blue-500 bg-white p-4 rounded-xl">
       <div className="text-center mb-2">
         <img src={icon} alt="Icon" className="w-8 h-8 mx-auto" />
       </div>
