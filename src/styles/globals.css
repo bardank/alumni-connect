@@ -37,16 +37,38 @@ body {
 .list-style {
   list-style: circle;
 }
-input {
+input,
+select,
+textarea {
   border: 1.5px solid black;
   text-align: center;
   margin-left: 5px;
   border-radius: 5px;
   gap: 3px;
+  display: block;
+  width: 40%;
 }
 input:hover {
   background-color: antiquewhite;
   border: 2px solid slateblue;
   border-color: blue;
   border-radius: 7px;
+}
+select:hover {
+  background-color: antiquewhite;
+  border: 2px solid slateblue;
+  border-color: blue;
+  border-radius: 7px;
+}
+textarea:hover {
+  background-color: antiquewhite;
+  border: 2px solid slateblue;
+  border-color: blue;
+}
+
+label {
+  display: block;
+}
+.radio {
+  width: 5%;
 }

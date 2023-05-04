@@ -135,7 +135,7 @@ const FooterLink = ({ linkText, link }) => {
 const SocialLink = ({ link, iconSrc }) => {
   return (
     <li>
-      <a href={link}>
+      <a href={link} target="_blank">
         <img className="w-10 h-10" src={iconSrc} alt="icon" />
       </a>
     </li>

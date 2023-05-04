@@ -22,11 +22,11 @@ export default Navbar;
 
 export const NavbarItem = ({ title, link }) => {
   return (
-    <li
+    <a
       href={link}
       className=" cursor-pointer mx-4 py-3 px-4 rounded-md hover:bg-green-400  hover:text-customGray-dark"
     >
       {title}
-    </li>
+    </a>
   );
 };

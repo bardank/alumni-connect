@@ -72,64 +72,14 @@ export default function Home() {
             including networking opportunities, career resources, and exclusive
             events.
           </p>
-          <button class="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-            Register Now!
+          <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
+            <a href="registeration" target="_blank">
+              Register now!
+            </a>
           </button>
         </div>
       </div>
-      <div>
-        <h3 className="text-black underline text-3xl font-bold p-1">
-          Alumni Association Committee
-        </h3>
-        <table class="table-auto border-collapse border border-gray-400">
-          <thead>
-            <tr class="bg-secondary">
-              <th class="px-4 py-2">Sl.No </th>
-              <th class="px-4 py-2">Name</th>
-              <th class="px-4 py-2">Designation</th>
-              <th class="px-4 py-2">Department</th>
-              <th class="px-4 py-2">Contact Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border px-4 py-2">Data 1</td>
-              <td class="border px-4 py-2">Data 2</td>
-              <td class="border px-4 py-2">Data 3</td>
-              <td class="border px-4 py-2">Data 4</td>
-              <td class="border px-4 py-2">Data 5</td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">Data 6</td>
-              <td class="border px-4 py-2">Data 7</td>
-              <td class="border px-4 py-2">Data 8</td>
-              <td class="border px-4 py-2">Data 9</td>
-              <td class="border px-4 py-2">Data 10</td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">Data 11</td>
-              <td class="border px-4 py-2">Data 12</td>
-              <td class="border px-4 py-2">Data 13</td>
-              <td class="border px-4 py-2">Data 14</td>
-              <td class="border px-4 py-2">Data 15</td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">Data 16</td>
-              <td class="border px-4 py-2">Data 17</td>
-              <td class="border px-4 py-2">Data 18</td>
-              <td class="border px-4 py-2">Data 19</td>
-              <td class="border px-4 py-2">Data 20</td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">Data 21</td>
-              <td class="border px-4 py-2">Data 22</td>
-              <td class="border px-4 py-2">Data 23</td>
-              <td class="border px-4 py-2">Data 24</td>
-              <td class="border px-4 py-2">Data 25</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+
       <Footer />
     </div>
   );
