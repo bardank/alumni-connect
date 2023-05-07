@@ -71,7 +71,7 @@ const AlumniProfile = ({ profile, name, usn, passingYear }) => {
         <p className="mb-2">{usn}</p>
         <p className="mb-2">{passingYear}</p>
         <button
-          className="border-solid border-black border-2 p-1 rounded hover:bg-black hover:text-white  "
+          className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-800"
           type=""
         >
           Read More

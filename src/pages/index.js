@@ -45,7 +45,7 @@ export default function Home() {
         <GalleryImage src="./assests/gallary/pic5.png" alt="gallery-pic" />
       </div>
       <div className="text-center ">
-        <a href="https://www.skit.org.in/gallery.html#">
+        <a href="https://www.skit.org.in/gallery.html#" target="_blank">
           <h3 className="text-secondary text-3xl font-semibold">
             Explore More
             <img
