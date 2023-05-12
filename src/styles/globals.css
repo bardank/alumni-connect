@@ -46,7 +46,8 @@ textarea {
   border-radius: 5px;
   gap: 3px;
   display: block;
-  width: 40%;
+  width: 60%;
+  max-width: ;
 }
 input:hover {
   background-color: antiquewhite;

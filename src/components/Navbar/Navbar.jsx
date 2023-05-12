@@ -5,7 +5,7 @@ const Navbar = () => {
     <div>
       <img src="./assests/logo.png" alt="SKIT logo" />
 
-      <nav className="flex items-center justify-between bg-primary py-2">
+      <nav className="flex items-center flex-row justify-between bg-primary py-2">
         <ul className="flex items-center flex-1 justify-between text-white">
           <NavbarItem link={"/"} title={"Home"} />
           <NavbarItem link="/alumni-directory" title={"Alumni Directory"} />
