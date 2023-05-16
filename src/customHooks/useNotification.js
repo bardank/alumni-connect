@@ -1,7 +1,7 @@
-import create, { createStore } from "zustand";
+import { create } from "zustand";
 // import { devtools, persist } from "zustand/middleware";
 
-export const useStore = createStore((set) => ({
+export const useStore = create((set) => ({
   notifications: [],
   removeNotification: (id) => {
     set((state) => ({

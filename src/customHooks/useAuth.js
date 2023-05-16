@@ -1,6 +1,6 @@
-import create, { createStore } from "zustand";
+import {create} from "zustand";
 
-const useStore = createStore((set) => ({
+const useStore = create((set) => ({
   user: {
     name: "",
     phone: "",
