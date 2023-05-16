@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="container m-5 flex gap-5 flex-wrap justify-center   md:flex-row flex-wrap ">
+      <div className="container m-5 flex gap-5 flex-wrap justify-center   md:flex-row  ">
         <AlumniProfile
           profile="/assests/Profile/profile.png"
           name="Ajay Bhuj"
