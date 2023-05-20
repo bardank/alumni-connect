@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
-import RegisterationInput from "../components/UI/registerationInput";
+
 import Select from "../components/UI/Select";
 import Input from "../components/UI/Input";
 import TextArea from "../components/UI/TextArea";
@@ -131,65 +131,67 @@ export default function Home() {
                 />
 
                 <Select title="Coarses" />
-
-                <FormHeading title=" Present Working Details :" />
-                <div className="grid grid-cols-4 gap-4 ">
-                  <h5>Placement Provided by SKIT:</h5>
-                  <div className="w-full md:w-auto pb-3 ">
-                    <label className="  inline" htmlFor="yes">
-                      YES:
+              </div>
+              <FormHeading title=" Present Working Details :" />
+              <div className="grid grid-cols-3 gap-4 ">
+                <div className=" ">
+                  <div className="flex align-middle  flex-row">
+                    <h5 className="">Placement Provided by SKIT:</h5>
+                    <label className="radio-button flex flex-row">
+                      <input
+                        value="option1"
+                        name="example-radio"
+                        type="radio"
+                      />
+                      <span className=" pr-2 radio"></span>
+                      Yes
                     </label>
-                    <input
-                      className=" radio inline "
-                      id="yes"
-                      type="radio"
-                      name="choice"
-                    />
-                    <label className="inline" htmlfor="NO">
-                      NO:
+                    <label className="radio-button flex flex-row">
+                      <input
+                        value="option1"
+                        name="example-radio"
+                        type="radio"
+                      />
+                      <span className="pl-2 radio"></span>
+                      NO
                     </label>
-                    <input
-                      className=" radio inline"
-                      id="No"
-                      type="radio"
-                      name="choice"
-                    />
                   </div>
-                  <Input
-                    label="Present organization "
-                    type="text"
-                    id="organization"
-                    name="organization"
-                    placeholder="organization "
-                    value={inputData.organization}
-                    onChange={onChange}
-                  />
-                  <Input
-                    label="Current Position/Designation "
-                    type="text"
-                    id="designation"
-                    name="designation"
-                    placeholder="eg: web Devloper "
-                    value={inputData.designation}
-                    onChange={onChange}
-                  />
-                  <Input
-                    label="  Upload offer letter / Appointment Letter "
-                    type="file"
-                    id="offerLetter"
-                    name="offerLetter"
-                    value={inputData.offerLetter}
-                    multiple
-                    onChange={onChange}
-                  />
                 </div>
 
-                <div className="w-full md:w-auto">
-                  <TextArea
-                    label="Suggestion"
-                    suggestion="send your suggestion"
-                  />
-                </div>
+                <Input
+                  label="Present organization "
+                  type="text"
+                  id="organization"
+                  name="organization"
+                  placeholder="organization "
+                  value={inputData.organization}
+                  onChange={onChange}
+                />
+                <Input
+                  label="Current Position/Designation "
+                  type="text"
+                  id="designation"
+                  name="designation"
+                  placeholder="eg: web Devloper "
+                  value={inputData.designation}
+                  onChange={onChange}
+                />
+                <Input
+                  label="  Upload offer letter / Appointment Letter "
+                  type="file"
+                  id="offerLetter"
+                  name="offerLetter"
+                  value={inputData.offerLetter}
+                  multiple
+                  onChange={onChange}
+                />
+              </div>
+
+              <div className="w-full md:w-auto">
+                <TextArea
+                  label="Suggestion"
+                  suggestion="send your suggestion"
+                />
               </div>
             </div>
           </form>

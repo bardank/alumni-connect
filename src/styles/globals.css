@@ -72,3 +72,22 @@ label {
 .radio {
   width: 5%;
 }
+
+.table-container {
+  width: 90%;
+  margin: auto;
+}
+
+.table-auto {
+  width: 100%;
+}
+
+.table-auto th,
+.table-auto td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-auto th {
+  border-right: 1px solid white;
+}
