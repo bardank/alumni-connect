@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import Footer from "@/components/Footer/Footer";
+import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
-import Input from "@/components/UI/Input";
+import Input from "../components/UI/Input";
 import Button from "../components/UI/Button.jsx";
 import { useMutation } from "@apollo/client";
 import LOGIN from "../graphql/mutation/LOGIN";
-import { useAuth } from "@/customHooks/useAuth";
-import { useNotification } from "@/customHooks/useNotification";
+import { useAuth } from "../customHooks/useAuth";
+import { useNotification } from "../customHooks/useNotification";
 const Login = () => {
   const [inputVariables, setInputVariables] = useState({
     email: "",
     password: "",
   });
 
-  const {setUser } =  useAuth();
+  const { setUser } = useAuth();
   const { setNotification } = useNotification();
   const handleInputChange = (e) => {
     setInputVariables((prevs) => ({
@@ -25,25 +25,24 @@ const Login = () => {
   const [login, { loading, error, data }] = useMutation(LOGIN, {
     onCompleted: (data) => {
       if (data?.login?.["success"] && !loading) {
-      const user = data.login["user"];
-      setUser(user.accessToken, user._id, user.phone, user.fullName);
-      setNotification(uuid(), "Login Successfull", "Success", 3000);
-    }
-    if (data?.login?.success == false) {
-      setNotification(uuid(), data.login.message, "Error", 3000);
-    }
-    }
+        const user = data.login["user"];
+        setUser(user.accessToken, user._id, user.phone, user.fullName);
+        setNotification(uuid(), "Login Successfull", "Success", 3000);
+      }
+      if (data?.login?.success == false) {
+        setNotification(uuid(), data.login.message, "Error", 3000);
+      }
+    },
   });
-
 
   const handleLogin = (e) => {
     e.preventDefault();
     login({
-        variables: {
-          email: inputVariables.userName,
-          password: inputVariables.password,
-        },
-      });
+      variables: {
+        email: inputVariables.userName,
+        password: inputVariables.password,
+      },
+    });
   };
   return (
     <div>

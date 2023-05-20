@@ -1,17 +1,25 @@
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import Button from "../components/UI/Button";
 
 export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="hero-container w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 ">
-        <div className="flex justify-center items-center h-full text-white">
-          <h5 className="text-2xl font-bold">
-            Welcome To Your SKIT Alumni Website
-          </h5>
+      {
+        <div className="hero-container w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 ">
+          <div className="flex justify-center items-center h-full text-white  flex-col">
+            <h5 className="text-2xl font-bold">
+              Welcome To Your SKIT Alumni Website
+            </h5>
+            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
+              <a href="registeration" target="_blank">
+                Register now!
+              </a>
+            </button>
+          </div>
         </div>
-      </div>
+      }
       <div className="flex justify-center items-center py-16 h-full text-black">
         <p className="text-3xl font-semibold">
           Our Purpose of Alumni Association
@@ -72,11 +80,12 @@ export default function Home() {
             including networking opportunities, career resources, and exclusive
             events.
           </p>
-          <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
+          <Button label="Register now" />
+          {/* <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
             <a href="registeration" target="_blank">
               Register now!
             </a>
-          </button>
+          </button> */}
         </div>
       </div>
 

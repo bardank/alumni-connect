@@ -43,41 +43,6 @@ export default function Home() {
           time="10:00 am"
         />
       </div>
-      <hr className="border-t border-dashed border-gray-400 my-8" />
-
-      <h2 className="text-2xl font-bold text-blue-600 m-4">Job Posting</h2>
-      <div className="m-4 flex flex-wrap gap-5 justify-center">
-        <Jobposting
-          jobRole="Software Engineer"
-          companyName="TCS"
-          location="Bangalore"
-        />
-        <Jobposting
-          jobRole="Software Engineer"
-          companyName="TCS"
-          location="Bangalore"
-        />
-        <Jobposting
-          jobRole="Software Engineer"
-          companyName="TCS"
-          location="Bangalore"
-        />
-        <Jobposting
-          jobRole="Software Engineer"
-          companyName="TCS"
-          location="Bangalore"
-        />
-        <Jobposting
-          jobRole="Software Engineer"
-          companyName="TCS"
-          location="Bangalore"
-        />
-        <Jobposting
-          jobRole="Software Engineer"
-          companyName="TCS"
-          location="Bangalore"
-        />
-      </div>
 
       <Footer />
     </div>
@@ -99,21 +64,6 @@ const Reunion = ({ year, date, location }) => {
   );
 };
 
-const Jobposting = ({ jobRole, companyName, location }) => {
-  return (
-    <div className=" border  p-2  bg-white rounded-lg shadow-lg  w-[250px] h-[180px] text-center ">
-      <h3 className="text-lg font-bold mb-2">{jobRole}</h3>
-      <p className="text-gray-500 mb-2">Company:{companyName}</p>
-      <p className="text-gray-500 mb-4">Location:{location}</p>
-      <button
-        className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-800"
-        type=""
-      >
-        Apply Now
-      </button>
-    </div>
-  );
-};
 const UpcomingEvents = ({ eventName, date, location, time }) => {
   return (
     <div className=" border  p-2  bg-white rounded-lg shadow-lg  w-[250px] h-[200px] text-center ">

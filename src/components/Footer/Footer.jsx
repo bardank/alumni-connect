@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <div>
       <footer className=" ">
-        <div className=" flex item-center justify-evenly grid md:grid-cols-4">
+        {/* <div className=" flex item-center justify-evenly grid md:grid-cols-4">
           <div className=" gap-5  m-5">
             <h5 className="text-black underline text-3xl font-bold p-1">
               Important Links
@@ -93,7 +93,7 @@ const Footer = () => {
               />
             </ol>
           </div>
-        </div>
+        </div> */}
 
         <div className="bg-primary p-2 w-screen ">
           <ul className="flex flex-row gap-8 justify-center pb-3 ">

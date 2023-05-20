@@ -64,7 +64,7 @@ const AlumniProfile = ({ profile, name, usn, passingYear }) => {
   return (
     <div className="card bg-white rounded-lg shadow-lg p-6 flex flex-col justify-center items-center w-[250px] h-[300px]">
       <div className="mb-4">
-        <img className="w-20 h-20 mx-auto" src={profile} alt="profilePic" />
+        {/* <img className="w-20 h-20 mx-auto" src={profile} alt="profilePic" /> */}
       </div>
       <div className="text-center">
         <h4 className="mb-2">{name}</h4>

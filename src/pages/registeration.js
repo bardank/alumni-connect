@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Footer from "@/components/Footer/Footer";
+import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
-import RegisterationInput from "@/components/UI/registerationInput";
+import RegisterationInput from "../components/UI/registerationInput";
 import Select from "../components/UI/Select";
+import Input from "../components/UI/Input";
 export default function Home() {
-  const [registerVariable, setRegisterVariable] = useState({
+  const [inputData, setInputVariable] = useState({
     firstName: "",
     middleName: "",
     lastName: "",
@@ -19,16 +20,13 @@ export default function Home() {
     offerLetter: "",
     suggestion: "",
   });
-  const handleRegisterData = (e) => {
-    setRegisterVariable((prevs) => ({
-      ...registerVariable,
+  const onChange = (e) => {
+    setInputVariable((prevs) => ({
+      ...inputData,
       [e.target.name]: e.target.value,
     }));
   };
-  const handleRegisteration = (e) => {
-    e.preventDefault();
-    console.log(registerVariable);
-  };
+
   return (
     <div>
       <Navbar />
@@ -46,85 +44,83 @@ export default function Home() {
             <div className=" ">
               <h5 className="text-xl pb-3 underline">Personal Details:</h5>
 
-              <RegisterationInput
+              <Input
                 label="First Name"
                 type="text"
-                id="firstName"
                 name="firstName"
                 placeholder="First Name"
                 value={registerVariable.firstName}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
-
-              <RegisterationInput
+              <Input
                 label="Middle Name"
                 type="text"
                 id="middleName"
                 name="middleName"
                 placeholder="middle Name"
                 value={registerVariable.middleName}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
-              <RegisterationInput
+              <Input
                 label="Last Name"
                 type="text"
                 id="lastName"
                 name="lastName"
                 placeholder="Last Name"
                 value={registerVariable.lastName}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
-              <RegisterationInput
+              <Input
                 label="Date of Birth "
                 type="date"
                 id="birthDate"
                 name="birthDate"
                 placeholder="Date of birth "
                 value={registerVariable.birthDate}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
-              <RegisterationInput
+              <Input
                 label=" Email "
                 type="email"
                 id="email"
                 name="email"
                 placeholder="email "
                 value={registerVariable.email}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
-              <RegisterationInput
+              <Input
                 label="Phone Number"
                 type="tel"
                 id="phoneNumber"
                 name="phoneNumber"
                 placeholder="phone Number"
                 value={registerVariable.phoneNumber}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
-              <RegisterationInput
+              <Input
                 label="Current Address"
                 type="text"
                 id="currentAddress"
                 name="currentAddress"
                 placeholder="currentAddress "
                 value={registerVariable.currentAddress}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
             </div>
             <hr className="m-5 border-t-1 border-black" />
 
             <h5 className="text-xl pb-3 underline">Academic Details:</h5>
             <div className=" ">
-              <RegisterationInput
+              <Input
                 label="USN "
                 type="text"
                 id="usn"
                 name="usn"
                 placeholder="USN "
                 value={registerVariable.usn}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
-              <RegisterationInput
+              <Input
                 label="Year of Completion "
                 type="number"
                 id="graduationYear"
@@ -132,7 +128,7 @@ export default function Home() {
                 placeholder="eg:2022 "
                 min="2000"
                 value={registerVariable.graduationYear}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
 
               <div className="w-full md:w-auto pb-3">
@@ -178,32 +174,32 @@ export default function Home() {
                   name="choice"
                 />
               </div>
-              <RegisterationInput
+              <Input
                 label="Present organization "
                 type="text"
                 id="organization"
                 name="organization"
                 placeholder="organization "
                 value={registerVariable.organization}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
-              <RegisterationInput
+              <Input
                 label="Current Position/Designation "
                 type="text"
                 id="designation"
                 name="designation"
                 placeholder="eg: web Devloper "
                 value={registerVariable.designation}
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
-              <RegisterationInput
+              <Input
                 label="  Upload offer letter / Appointment Letter "
                 type="file"
                 id="offerLetter"
                 name="offerLetter"
                 value={registerVariable.offerLetter}
                 multiple
-                onChange={handleRegisterData}
+                onChange={onChange}
               />
             </div>
             <hr className="m-5 border-t-1 border-black" />
@@ -216,7 +212,8 @@ export default function Home() {
                 cols="40"
                 className="border"
                 value={registerVariable.suggestion}
-                onChange={handleRegisterData}
+                onChange={on}
+                ChaonChange
                 placeholder="Give your Suggestion here!!"
               ></textarea>
             </div>
