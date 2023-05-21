@@ -1,22 +1,21 @@
-import {create} from "zustand";
+import { create } from "zustand";
 
 const useStore = create((set) => ({
   user: {
-    name: "",
-    phone: "",
+    fullName: "",
+    email: "",
     id: "",
-    verifiedPhone: false,
   },
-  setUser: (token, id, phone, fullName, verifiedPhone) => {
+  setUser: (token, id, email, fullName) => {
     if (token) {
       localStorage.setItem("rent-app-token", token);
     }
     set((state) => ({
+      ...state,
       user: {
-        name: fullName,
-        phone: phone,
+        fullName: fullName,
+        email: email,
         id: id,
-        verifiedPhone: verifiedPhone,
       },
     }));
   },
@@ -24,10 +23,9 @@ const useStore = create((set) => ({
     localStorage.removeItem("rent-app-token");
     set((state) => ({
       user: {
-        name: "",
-        phone: "",
+        fullName: "",
+        email: "",
         id: "",
-        verifiedPhone: false,
       },
     }));
   },

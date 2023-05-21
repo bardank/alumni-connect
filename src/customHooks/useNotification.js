@@ -10,6 +10,7 @@ export const useStore = create((set) => ({
   },
   setNotification: (id, message, status, timeDelay = 3000) => {
     set((state) => ({
+      ...state,
       notifications: [
         ...state.notifications,
         {

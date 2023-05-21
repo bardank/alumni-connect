@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { client } from "../graphql/client";
 import { ApolloProvider } from "@apollo/client";
 import PopUpNotification from "../components/UI/PopupNotification";
@@ -6,11 +6,17 @@ import { useNotification } from "../customHooks/useNotification";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  const { notifications, setNotification } = useNotification((state) => state);
+  const notifications = useNotification((state) => state.notifications);
+
+  useEffect(() => {
+    console.log({ notifications });
+
+    return () => {};
+  }, []);
 
   return (
     <ApolloProvider client={client}>
-      <PopUpNotification notifications={notifications} />
+      {/* <PopUpNotification notifications={notifications} /> */}
       <Component {...pageProps} />
     </ApolloProvider>
   );

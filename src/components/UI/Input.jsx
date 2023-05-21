@@ -1,6 +1,6 @@
 import React from "react";
 
-const Input = ({ label, id, type, placeholder, value, onChange, name }) => {
+const Input = ({ label, id, type, placeholder, value, onChange, name, required = true }) => {
   return (
     <div className="mb-4 w-full ">
       <label className="block text-gray-700 font-bold mb-2" htmlFor={id}>

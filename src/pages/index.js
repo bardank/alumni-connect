@@ -1,8 +1,14 @@
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import Button from "../components/UI/Button";
-
+import { useRouter } from "next/router";
 export default function Home() {
+  const router = useRouter();
+
+  const onRegisterClick = () => {
+    router.push("/registeration");
+  };
+
   return (
     <div>
       <Navbar />
@@ -73,14 +79,14 @@ export default function Home() {
         <div className="shrink ">
           <a href=""></a>
         </div>
-        <div className="w-80">
-          <p className="text-center">
+        <div className="w-80 pb-8">
+          <p className="text-center pb-4">
             Welcome to the alumni community of SKIT. As a member of the alumni
             association, you will have access to a wide range of benefits,
             including networking opportunities, career resources, and exclusive
             events.
           </p>
-          <Button label="Register now" />
+          <Button onClick={onRegisterClick} label="Register now" />
           {/* <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
             <a href="registeration" target="_blank">
               Register now!

@@ -8,15 +8,18 @@ import LOGIN from "../graphql/mutation/LOGIN";
 import { useAuth } from "../customHooks/useAuth";
 import { useNotification } from "../customHooks/useNotification";
 import { uuid } from "uuidv4";
+import { useRouter } from "next/router";
 
 const Login = () => {
+  const router = useRouter();
+
   const [inputVariables, setInputVariables] = useState({
     email: "",
     password: "",
   });
 
   const { setUser } = useAuth();
-  const { setNotification } = useNotification();
+  const { setNotification } = useNotification(state=>state);
   const handleInputChange = (e) => {
     setInputVariables((prevs) => ({
       ...inputVariables,
@@ -26,15 +29,21 @@ const Login = () => {
 
   const [login, { loading, error, data }] = useMutation(LOGIN, {
     onCompleted: (data) => {
-      if (data?.login?.["success"] && !loading) {
+      console.log(data.login);
+      if (data?.login?.["success"] ) {
         const user = data.login["user"];
-        setUser(user.accessToken, user._id, user.phone, user.fullName);
+        console.log({user});
+        setUser(user.accessToken, user._id, user.email, user.fullName);
         setNotification(uuid(), "Login Successfull", "Success", 3000);
+        router.push("/dashboard");
+
       }
-      if (data?.login?.success == false) {
+      if (!data?.login?.success) {
         setNotification(uuid(), data.login.message, "Error", 3000);
       }
     },
+
+    
     onError: (error) => {
       console.log(error);
       // setNotification(uuid(), error.message, "Error", 3000);
@@ -43,12 +52,15 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login({
-      variables: {
-        email: inputVariables.email,
-        password: inputVariables.password,
-      },
-    });
+    if(!loading){
+
+      login({
+        variables: {
+          email: inputVariables.email,
+          password: inputVariables.password,
+        },
+      });
+    }
   };
   return (
     <div>
