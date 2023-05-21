@@ -7,6 +7,8 @@ import { useMutation } from "@apollo/client";
 import LOGIN from "../graphql/mutation/LOGIN";
 import { useAuth } from "../customHooks/useAuth";
 import { useNotification } from "../customHooks/useNotification";
+import { uuid } from "uuidv4";
+
 const Login = () => {
   const [inputVariables, setInputVariables] = useState({
     email: "",
@@ -33,13 +35,17 @@ const Login = () => {
         setNotification(uuid(), data.login.message, "Error", 3000);
       }
     },
+    onError: (error) => {
+      console.log(error);
+      // setNotification(uuid(), error.message, "Error", 3000);
+    }
   });
 
   const handleLogin = (e) => {
     e.preventDefault();
     login({
       variables: {
-        email: inputVariables.userName,
+        email: inputVariables.email,
         password: inputVariables.password,
       },
     });
@@ -71,7 +77,7 @@ const Login = () => {
               value={inputVariables.password}
               onChange={handleInputChange}
             />
-            <Button type="submit" label={"Login"} />
+            <Button type="submit" label={loading ? "Loading..." : "Login"} />
           </form>
         </div>
       </div>

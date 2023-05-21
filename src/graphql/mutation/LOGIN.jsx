@@ -9,7 +9,6 @@ const LOGIN_USER = gql`
             user {
                 _id
                 accessToken
-                createdAt
                 email
                 fullName
                 phone
@@ -18,7 +17,6 @@ const LOGIN_USER = gql`
             }
         }
     }
-
 `;
 
 export default LOGIN_USER;

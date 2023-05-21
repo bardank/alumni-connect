@@ -29,7 +29,7 @@ const authLink = setContext((_, {
 
 
 const httpLink = createUploadLink({
-    uri: "https://localhost:5000/graphql",
+    uri: "http://localhost:5000/graphql",
 })
 
 export const client = new ApolloClient({

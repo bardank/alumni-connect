@@ -9,11 +9,9 @@ export default function App({ Component, pageProps }) {
   const { notifications, setNotification } = useNotification((state) => state);
 
   return (
-    <Fragment>
-      <ApolloProvider client={client}>
-        <PopUpNotification notifications={notifications} />
-        <Component {...pageProps} />
-      </ApolloProvider>
-    </Fragment>
+    <ApolloProvider client={client}>
+      <PopUpNotification notifications={notifications} />
+      <Component {...pageProps} />
+    </ApolloProvider>
   );
 }
