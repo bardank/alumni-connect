@@ -3,7 +3,7 @@ import { client } from "../graphql/client";
 import { ApolloProvider } from "@apollo/client";
 import PopUpNotification from "../components/UI/PopupNotification";
 import { useNotification } from "../customHooks/useNotification";
-import "../styles/globals.css";
+import "../styles/globals.scss";
 
 export default function App({ Component, pageProps }) {
   const notifications = useNotification((state) => state.notifications);

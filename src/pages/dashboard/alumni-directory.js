@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { useQuery } from "@apollo/client";
-import Footer from "../components/Footer/Footer";
-import Navbar from "../components/Navbar/Navbar";
-import { FETCH_ALUMNIS } from "../graphql/query/FETCH_ALUMNIS";
-import PageLayout from "../layout/PageLayout";
-import Pagination from "../components/Pagination/Pagination";
+import { FETCH_ALUMNIS } from "../../graphql/query/FETCH_ALUMNIS";
+import Pagination from "../../components/Pagination/Pagination";
+import AdminLayout from "../../layout/AdminLayout";
 
 export default function Home() {
   const [alumniList, setAlumniList] = useState([]);
@@ -25,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <PageLayout>
+    <AdminLayout>
       <div className=" m-5 flex gap-5 flex-wrap justify-center   md:flex-row  ">
         {loading && <div>loading...</div>}
         {!loading &&
@@ -46,7 +44,7 @@ export default function Home() {
           next={data.fetchAlumnis.next}
         />
       )}
-    </PageLayout>
+    </AdminLayout>
   );
 }
 
