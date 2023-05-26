@@ -106,6 +106,11 @@ const Footer = () => {
               iconSrc="./assests/icons/linkedin.png"
             />
             <SocialLink
+              link="https://www.instagram.com/skit.org.in/"
+              iconSrc="./assests/icons/instagram.png"
+            />
+
+            <SocialLink
               link="https://twitter.com/skit_org_in"
               iconSrc="./assests/icons/twitter.png"
             />

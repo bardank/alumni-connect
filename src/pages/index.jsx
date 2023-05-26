@@ -35,10 +35,12 @@ export default function Home() {
         <PurposeCard
           text="Our vision is a worldwide alumni network that fosters lifelong connections and engagement with the college, empowering alumni to make a positive impact in their lives and the community."
           icon="./assests/icons/vision.png"
+          heading="Vision"
         />
         <PurposeCard
           text=" We aim to foster a spirit of lifelong learning and professional development, and to support the college's mission of promoting academic excellence, diversity, and social responsibility."
           icon="./assests/icons/mission.png"
+          heading="Mission"
         />
         <PurposeCard
           text=" Our objectives are to increase alumni engagement through diverse
@@ -46,6 +48,7 @@ export default function Home() {
             and support the college's strategic initiatives through fundraising
             and advocacy."
           icon="./assests/icons/objectives.png"
+          heading="Objective"
         />
       </div>
       <div className="flex justify-center items-center py-16 h-full text-black pb-6 ">
@@ -94,17 +97,17 @@ export default function Home() {
           </button> */}
         </div>
       </div>
-
       <Footer />
     </div>
   );
 }
 
-const PurposeCard = ({ text, icon }) => {
+const PurposeCard = ({ text, icon, heading }) => {
   return (
     <div className="border-primary border-2 hover:border-blue-500 bg-white p-4 rounded-xl">
       <div className="text-center mb-2">
         <img src={icon} alt="Icon" className="w-8 h-8 mx-auto" />
+        <h1 className="font-medium">{heading}</h1>
       </div>
       {text}
     </div>

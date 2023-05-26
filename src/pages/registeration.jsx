@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar/Navbar";
 import Select from "../components/UI/Select";
 import Input from "../components/UI/Input";
 import TextArea from "../components/UI/TextArea";
+import { useMutation } from "@apollo/client";
+import CREATE_ALUMNI from "../graphql/mutation/CREATE_ALUMNI.JSX";
 
 export default function Home() {
   const [inputData, setInputVariable] = useState({
@@ -21,12 +23,24 @@ export default function Home() {
     designation: "",
     offerLetter: "",
     suggestion: "",
+    isPlacementProvidedBySkit: true,
+  });
+
+  const [createAlumni, { loading, error, data }] = useMutation(CREATE_ALUMNI, {
+    variables: {},
   });
   const onChange = (e) => {
     setInputVariable((prevs) => ({
       ...inputData,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handleRegisteration = (e) => {
+    e.preventDefault();
+    createAlumni({
+      variables: {},
+    });
   };
 
   return (
@@ -130,7 +144,7 @@ export default function Home() {
                   onChange={onChange}
                 />
 
-                <Select title="Coarses" />
+                <Select title="Courses" />
               </div>
               <FormHeading title=" Present Working Details :" />
               <div className="grid grid-cols-3 gap-4 ">
