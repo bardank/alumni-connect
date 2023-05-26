@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 
-export default function TextArea({ label, value, suggestion, name }) {
+export default function TextArea({
+  label,
+  value,
+  placeholder,
+  name,
+  onChange,
+}) {
   return (
     <div>
       <div className="w-full md:w-auto">
         <label>{label}</label>
         <textarea
-          name={suggestion}
+          name={name}
           rows="6"
           cols="40"
           value={value}
           className="border w-full"
-          placeholder={suggestion}
-          onChange={(e) => onChange(e)}
+          placeholder={placeholder}
+          onChange={onChange}
         ></textarea>
       </div>
     </div>

@@ -1,6 +1,9 @@
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import Button from "../components/UI/Button";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import { useRouter } from "next/router";
 export default function Home() {
   const router = useRouter();
@@ -12,8 +15,70 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      {
-        <div className="hero-container w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 ">
+      <Carousel
+        infiniteLoop
+        autoPlay
+        showStatus={false}
+        showArrows={false}
+        interval={2000}
+        showThumbs={false}
+        showIndicators={false}
+      >
+        <div className="">
+          <img
+            src={"../assests/backgroundImages/background1.png"}
+            alt="Item1"
+          />
+          <div className="text-overlay text-2xl font-bold text-black ">
+            {" "}
+            Welcome To Your SKIT Alumni Website
+          </div>
+          <div className="button-overlay ">
+            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
+              <a href="registeration" target="_blank">
+                Register now!
+              </a>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <img
+            src={"../assests/backgroundImages/background2.jpg"}
+            alt="Item2"
+          />
+          <div className="text-overlay text-2xl font-bold text-black ">
+            {" "}
+            Welcome To Your SKIT Alumni Website
+          </div>
+          <div className="button-overlay">
+            <button className="bg-blue-500   hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
+              <a href="registeration" target="_blank">
+                Register now!
+              </a>
+            </button>
+          </div>
+        </div>
+        <div>
+          <img
+            src={"../assests/backgroundImages/background3.jpg "}
+            alt="Item3"
+          />
+          <div className="text-overlay text-2xl font-bold text-black ">
+            {" "}
+            Welcome To Your SKIT Alumni Website
+          </div>
+          <div className="button-overlay">
+            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
+              <a href="registeration" target="_blank">
+                Register now!
+              </a>
+            </button>
+          </div>
+        </div>
+      </Carousel>
+      {/* {
+        <div className=" w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 ">
           <div className="flex justify-center items-center h-full text-white  flex-col">
             <h5 className="text-2xl font-bold">
               Welcome To Your SKIT Alumni Website
@@ -25,7 +90,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      }
+      } */}
       <div className="flex justify-center items-center py-16 h-full text-black">
         <p className="text-3xl font-semibold">
           Our Purpose of Alumni Association

@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Select from "../components/UI/Select";
 import Input from "../components/UI/Input";
 import TextArea from "../components/UI/TextArea";
+import Button from "../components/UI/Button";
 import { useMutation } from "@apollo/client";
 import CREATE_ALUMNI from "../graphql/mutation/CREATE_ALUMNI.JSX";
 
@@ -24,11 +25,14 @@ export default function Home() {
     offerLetter: "",
     suggestion: "",
     isPlacementProvidedBySkit: true,
+    branch: "",
   });
 
   const [createAlumni, { loading, error, data }] = useMutation(CREATE_ALUMNI, {
     variables: {},
+    onCompleted: (data) => {},
   });
+
   const onChange = (e) => {
     setInputVariable((prevs) => ({
       ...inputData,
@@ -36,10 +40,47 @@ export default function Home() {
     }));
   };
 
+  const resetForm = () => {
+    setInputVariable({
+      firstName: "",
+      middleName: "",
+      lastName: "",
+      birthDate: "",
+      email: "",
+      phoneNumber: "",
+      currentAddress: "",
+      usn: "",
+      graduationYear: "",
+      organization: "",
+      designation: "",
+      offerLetter: "",
+      suggestion: "",
+      isPlacementProvidedBySkit: true,
+      branch: "",
+    });
+  };
+
   const handleRegisteration = (e) => {
     e.preventDefault();
+    console.log({ inputData });
     createAlumni({
-      variables: {},
+      variables: {
+        createAlumniInput: {
+          fullName: `${inputData.firstName.trim()} ${inputData.middleName.trim()} ${inputData.lastName.trim()}`,
+          currentAddress: inputData.currentAddress,
+          currentPosition: inputData.designation,
+          email: inputData.email,
+          offerLetterLink: "",
+          phoneNumber: inputData.phoneNumber,
+          presentOrganization: inputData.organization,
+          suggestion: inputData.suggestion,
+          usn: inputData.usn,
+          yearOfCompletion: parseInt(inputData.graduationYear),
+          linkedIn: "",
+          branch: inputData.branch,
+          isPlacementProvidedBySkit: inputData.isPlacementProvidedBySkit,
+        },
+      },
     });
   };
 
@@ -144,7 +185,7 @@ export default function Home() {
                   onChange={onChange}
                 />
 
-                <Select title="Courses" />
+                <Select label="Branch" name="branch" onChange={onChange} />
               </div>
               <FormHeading title=" Present Working Details :" />
               <div className="grid grid-cols-3 gap-4 ">
@@ -153,18 +194,30 @@ export default function Home() {
                     <h5 className="">Placement Provided by SKIT:</h5>
                     <label className="radio-button flex flex-row">
                       <input
-                        value="option1"
-                        name="example-radio"
+                        value={true}
+                        name="isPlacementProvidedBySkit"
                         type="radio"
+                        onChange={() => {
+                          setInputVariable((prev) => ({
+                            ...inputData,
+                            isPlacementProvidedBySkit: true,
+                          }));
+                        }}
                       />
                       <span className=" pr-2 radio"></span>
                       Yes
                     </label>
                     <label className="radio-button flex flex-row">
                       <input
-                        value="option1"
-                        name="example-radio"
+                        value={false}
+                        name="isPlacementProvidedBySkit"
                         type="radio"
+                        onChange={() => {
+                          setInputVariable((prev) => ({
+                            ...inputData,
+                            isPlacementProvidedBySkit: false,
+                          }));
+                        }}
                       />
                       <span className="pl-2 radio"></span>
                       NO
@@ -204,10 +257,14 @@ export default function Home() {
               <div className="w-full md:w-auto">
                 <TextArea
                   label="Suggestion"
-                  suggestion="send your suggestion"
+                  placeholder="send your suggestion"
+                  value={inputData.suggestion}
+                  onChange={onChange}
+                  name="suggestion"
                 />
               </div>
             </div>
+            <Button type="submit" label="Submit" />
           </form>
         </div>
       </div>
