@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <div>
       <Navbar />
+      <div className="searchBar"></div>
       <h2 className="text-2xl font-bold text-blue-600 m-4">Upcoming Events</h2>
       <div className="m-4 flex flex-wrap gap-5 justify-center">
         <UpcomingEvents

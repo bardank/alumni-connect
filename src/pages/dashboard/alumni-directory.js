@@ -34,6 +34,7 @@ export default function Home() {
                 name={alumni.fullName}
                 usn={alumni.usn}
                 passingYear={alumni.yearOfCompletion}
+                key={alumni.id}
               />
             );
           })}

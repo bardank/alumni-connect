@@ -1,16 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { Fragment } from "react";
-import Footer from "../components/Footer/Footer";
-import Navbar from "../components/Navbar/Navbar";
+
 import PageLayout from "../layout/PageLayout";
 
 const Donation = () => {
   return (
     <PageLayout>
-      <h1 className="text-center text-2xl font-bold">Ways to Contribute</h1>
-      <div className="containerContribution m-4 flex">
-        <div className="left  w-1/2 h-auto m-5 ">
-          <h2 className="font-bold underline pb-3">
+      <h1 className="text-center text-3xl  font-bold">Ways to Contribute</h1>
+      <div className="containerContribution  flex flex-col  justify-center  p-20">
+        <div className="left  w-full h-auto  ">
+          <h2 className="font-bold text-2xl underline pb-3">
             As an alumnus/alumna, there are several ways you can contribute to
             your college and make a positive impact:
           </h2>
@@ -56,42 +55,43 @@ const Donation = () => {
             </li>
           </ul>
         </div>
-        <div class="h-auto flex items-center">
-          <div class="h-full border border-gray-500"></div>
-        </div>
 
-        <div className="right w-1/2 h-auto m-5 flex flex-col">
-          <h1 className="underline font-bold p-5 ">Bank Details</h1>
+        <div className="right w-1/2 h-auto m-5  ">
+          <h1 className="underline font-bold  text-2xl ">Bank Details</h1>
           <table className="account-table">
-            <tr className="border-2 border-black">
-              <th className="border-2 border-black py-2 px-4">
-                Sri Krishna Institute Of Technology:
-              </th>
-              <td className="py-2 px-4">ICICI bank</td>
-            </tr>
-            <tr className="border-2 border-black">
-              <th className="border-2 border-black py-2 px-4">
-                Account Number:
-              </th>
-              <td className="py-2 px-4">1234567890</td>
-            </tr>
-            <tr className="border-2 border-black">
-              <th className="border-2 border-black py-2 px-4">Account Name:</th>
-              <td className="py-2 px-4">Your College Alumni Fund</td>
-            </tr>
-            <tr className="border-2 border-black">
-              <th className="border-2 border-black py-2 px-4">Branch:</th>
-              <td className="py-2 px-4">City Branch</td>
-            </tr>
+            <tbody>
+              <tr className="border-2 border-black">
+                <th className="border-2 border-black py-2 px-4">
+                  Sri Krishna Institute Of Technology:
+                </th>
+                <td className="py-2 px-4">ICICI bank</td>
+              </tr>
+              <tr className="border-2 border-black">
+                <th className="border-2 border-black py-2 px-4">
+                  Account Number:
+                </th>
+                <td className="py-2 px-4">1234567890</td>
+              </tr>
+              <tr className="border-2 border-black">
+                <th className="border-2 border-black py-2 px-4">
+                  Account Name:
+                </th>
+                <td className="py-2 px-4">Your College Alumni Fund</td>
+              </tr>
+              <tr className="border-2 border-black">
+                <th className="border-2 border-black py-2 px-4">Branch:</th>
+                <td className="py-2 px-4">City Branch</td>
+              </tr>
+            </tbody>
           </table>
-          <div className="qr-code   ">
+          {/* <div className="qr-code   ">
             <img
               className="w-40 h-40"
               src="./assests/icons/qrcode.png"
               alt=""
             />
             <p>Scan Qr code to contribute </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </PageLayout>

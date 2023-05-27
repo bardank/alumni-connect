@@ -8,11 +8,11 @@ import "../styles/globals.scss";
 export default function App({ Component, pageProps }) {
   const notifications = useNotification((state) => state.notifications);
 
-  useEffect(() => {
-    console.log({ notifications });
+  // useEffect(() => {
+  //   console.log({ notifications });
 
-    return () => {};
-  }, []);
+  //   return () => {};
+  // }, []);
 
   return (
     <ApolloProvider client={client}>

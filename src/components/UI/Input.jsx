@@ -1,6 +1,15 @@
 import React from "react";
 
-const Input = ({ label, id, type, placeholder, value, onChange, name, required = true }) => {
+const Input = ({
+  label,
+  id,
+  type,
+  placeholder,
+  value,
+  onChange,
+  name,
+  required = true,
+}) => {
   return (
     <div className="mb-4 w-full ">
       <label className="block text-gray-700 font-bold mb-2" htmlFor={id}>
@@ -14,6 +23,7 @@ const Input = ({ label, id, type, placeholder, value, onChange, name, required =
         value={value}
         onChange={(e) => onChange(e)}
         placeholder={placeholder}
+        required={required}
       />
     </div>
   );
