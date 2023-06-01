@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./UI/Input";
 import { useState } from "react";
 import Button from "./UI/Button";
-import Datetime from 'react-datetime';
+import Datetime from "react-datetime";
 import CREATE_EVENT from "../graphql/mutation/CREATE_EVENT";
 import { useMutation } from "@apollo/client";
 const EventForm = () => {
@@ -18,12 +18,12 @@ const EventForm = () => {
       eventDate: "",
       location: "",
     });
-  }
+  };
 
   const [createEvent, { loading, error, data }] = useMutation(CREATE_EVENT, {
     variables: {},
     onCompleted: (data) => {
-      if(data.createEvent?.success){
+      if (data.createEvent?.success) {
         resetForm();
       }
     },
@@ -34,18 +34,18 @@ const EventForm = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const onSubmit = (e) => { 
+  const onSubmit = (e) => {
     e.preventDefault();
     createEvent({
       variables: {
         createEventInput: {
-          date : formData.eventDate,
-          eventName : formData.title,
-          location : formData.location
-        }
-      }
+          date: formData.eventDate,
+          eventName: formData.title,
+          location: formData.location,
+        },
+      },
     });
-  }
+  };
 
   return (
     <div>
@@ -59,15 +59,14 @@ const EventForm = () => {
           name={"title"}
           value={formData.label}
         />
-        <Datetime className="" value={formData.eventDate} onChange={(e)=> setFormData(prev=>({...prev, eventDate:e}))}  />
-        {/* <Input
+        <Input
           label="Event Date"
           type="datetime-local"
           onChange={onChange}
           placeholder="Enter event date"
           name="eventDate"
           value={formData.eventDate}
-        /> */}
+        />
         <Input
           label="Event Location"
           type="text"

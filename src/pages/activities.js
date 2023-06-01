@@ -1,48 +1,46 @@
 import Footer from "../components/Footer/Footer";
+import { useState } from "react";
 import Navbar from "../components/Navbar/Navbar";
+import { FETCH_EVENTS } from "../graphql/query/FETCH_EVENTS";
+import { useQuery } from "@apollo/client";
+import moment from "moment";
 export default function Home() {
+  const [queryData, setQUeryData] = useState({
+    count: 10,
+    pageNo: 1,
+  });
+
+  const [events, setEvents] = useState([]);
+
+  const { data, loading } = useQuery(FETCH_EVENTS, {
+    variables: {
+      fetchEventsInput: {
+        ...queryData,
+      },
+    },
+    onCompleted: (data) => {
+      if (data?.fetchEvents?.success) {
+        console.log(data.fetchEvents.data);
+        setEvents(data.fetchEvents.data);
+      }
+    },
+  });
+
   return (
     <div>
       <Navbar />
       <div className="searchBar"></div>
       <h2 className="text-2xl font-bold text-blue-600 m-4">Upcoming Events</h2>
       <div className="m-4 flex flex-wrap gap-5 justify-center">
-        <UpcomingEvents
-          eventName="Alumni Reunion Function"
-          date="May 15,2023"
-          location="SKIT Auditorium"
-          time="10:00 am"
-        />
-        <UpcomingEvents
-          eventName="Shristi"
-          date="June 19,2023"
-          location="SKIT "
-          time="10:00 am"
-        />
-        <UpcomingEvents
-          eventName="Kreedavotsava"
-          date="June 20,2023"
-          location="SKIT "
-          time="10:00 am"
-        />
-        <UpcomingEvents
-          eventName="SKIT Premier league"
-          date="JUle 21,22,2023"
-          location="SKIT Ground"
-          time="10:00 am"
-        />
-        <UpcomingEvents
-          eventName="Ethnic Day"
-          date="June 23,2023"
-          location="SKIT "
-          time="10:00 am"
-        />
-        <UpcomingEvents
-          eventName="Alumni Meet and Yuvan"
-          date="June 24,2023"
-          location="SKIT Auditorium"
-          time="10:00 am"
-        />
+        {loading && <div>loading...</div>}
+        {events.map((item) => (
+          <UpcomingEvents
+            eventName={item.eventName}
+            date={moment(item.date).format("Do MMMM YYYY")}
+            time={moment(item.date).format(" h:mm A")}
+            location={item.location}
+          />
+        ))}
       </div>
 
       <Footer />

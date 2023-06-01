@@ -1,8 +1,32 @@
-import { Input } from "postcss";
+import { useState } from "react";
 import AdminLayout from "../../layout/AdminLayout";
 import EventFormDash from "../../components/EventForm";
+import { useQuery } from "@apollo/client";
+import { FETCH_EVENTS } from "../../graphql/query/FETCH_EVENTS";
+import Pagination from "../../components/Pagination/Pagination";
 
+import moment from "moment";
 export default function Home() {
+  const [queryData, setQUeryData] = useState({
+    count: 10,
+    pageNo: 1,
+  });
+
+  const [events, setEvents] = useState([]);
+
+  const { data, loading } = useQuery(FETCH_EVENTS, {
+    variables: {
+      fetchEventsInput: {
+        ...queryData,
+      },
+    },
+    onCompleted: (data) => {
+      if (data?.fetchEvents?.success) {
+        console.log(data.fetchEvents.data);
+        setEvents(data.fetchEvents.data);
+      }
+    },
+  });
   return (
     <AdminLayout>
       <div>
@@ -11,25 +35,19 @@ export default function Home() {
       <h2 className="text-2xl p-4 font-semibold">Upcomping Events Lists</h2>
 
       <div className="flex flex-wrap gap-3 m-5 justify-center">
-        <UpcomingEvents
-          eventName="alumni"
-          date="12 may,2023"
-          time="10:00am"
-          location="bangalore"
-        />
-        <UpcomingEvents
-          eventName="alumni"
-          date="12 may,2023"
-          time="10:00am"
-          location="bangalore"
-        />
-        <UpcomingEvents
-          eventName="alumni"
-          date="12 may,2023"
-          time="10:00am"
-          location="bangalore"
-        />
+        {loading && <div>loading...</div>}
+        {events.map((item) => (
+          <UpcomingEvents
+            eventName={item.eventName}
+            date={moment(item.date).format("Do MMMM YYYY")}
+            time={moment(item.date).format(" h:mm A")}
+            location={item.location}
+          />
+        ))}
       </div>
+      {data && (
+        <Pagination back={data.fetchEvents.back} next={data.fetchEvents.next} />
+      )}
     </AdminLayout>
   );
 }
