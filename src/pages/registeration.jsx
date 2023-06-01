@@ -243,7 +243,7 @@ export default function Home() {
                   value={inputData.designation}
                   onChange={onChange}
                 />
-                <Input
+                {/* <Input
                   label="  Upload offer letter / Appointment Letter "
                   type="file"
                   id="offerLetter"
@@ -251,7 +251,7 @@ export default function Home() {
                   value={inputData.offerLetter}
                   multiple
                   onChange={onChange}
-                />
+                /> */}
               </div>
 
               <div className="w-full md:w-auto">

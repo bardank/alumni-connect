@@ -84,7 +84,7 @@ export default function Home() {
                 <tr class="bg-secondary">
                   <th class="px-4 py-2 border-r border-white">SL.No</th>
                   <th class="px-4 py-2 border-r border-white">Name</th>
-                  <th class="px-4 py-2 border-r border-white">Designation 3</th>
+                  <th class="px-4 py-2 border-r border-white">Designation</th>
                   <th class="px-4 py-2 border-r border-white">Department </th>
                   <th class="px-4 py-2 border-r border-white">
                     Contact Details
@@ -101,24 +101,38 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td class="border px-4 py-2">2</td>
-                  <td class="border px-4 py-2">Mr. Avinash</td>
+                  <td class="border px-4 py-2">Mr.Anil Kumar </td>
                   <td class="border px-4 py-2">Convener</td>
-                  <td class="border px-4 py-2">Electrical & Electronics</td>
-                  <td class="border px-4 py-2">9060800520</td>
+                  <td class="border px-4 py-2">ISE</td>
+                  <td class="border px-4 py-2"></td>
                 </tr>
                 <tr>
                   <td class="border px-4 py-2">3</td>
-                  <td class="border px-4 py-2">Mr. Mohan K.T</td>
+                  <td class="border px-4 py-2">Mrs. Kusuma H P </td>
                   <td class="border px-4 py-2">Member</td>
-                  <td class="border px-4 py-2">Civil</td>
-                  <td class="border px-4 py-2">8892929329</td>
+                  <td class="border px-4 py-2">CSE</td>
+                  <td class="border px-4 py-2"></td>
                 </tr>
                 <tr>
                   <td class="border px-4 py-2">4</td>
-                  <td class="border px-4 py-2">Mr. Sagar H. N</td>
+                  <td class="border px-4 py-2">Mr. Dinesh</td>
                   <td class="border px-4 py-2">Member</td>
                   <td class="border px-4 py-2">Mechanical</td>
-                  <td class="border px-4 py-2">9632554627</td>
+                  <td class="border px-4 py-2"></td>
+                </tr>
+                <tr>
+                  <td class="border px-4 py-2">5</td>
+                  <td class="border px-4 py-2">Ms. Sindhu</td>
+                  <td class="border px-4 py-2">Member</td>
+                  <td class="border px-4 py-2">ISE</td>
+                  <td class="border px-4 py-2"></td>
+                </tr>
+                <tr>
+                  <td class="border px-4 py-2">6</td>
+                  <td class="border px-4 py-2">Mr. Vishwapavan </td>
+                  <td class="border px-4 py-2">Member</td>
+                  <td class="border px-4 py-2">CIVIL</td>
+                  <td class="border px-4 py-2"></td>
                 </tr>
               </tbody>
             </table>

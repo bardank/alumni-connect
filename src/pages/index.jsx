@@ -1,10 +1,12 @@
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+
 import Button from "../components/UI/Button";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { useRouter } from "next/router";
+import TextAnimation from "../components/TextAnimation";
 export default function Home() {
   const router = useRouter();
 
@@ -20,20 +22,20 @@ export default function Home() {
         autoPlay
         showStatus={false}
         showArrows={false}
-        interval={2000}
+        interval={6000}
         showThumbs={false}
-        showIndicators={false}
+        showIndicators={true}
       >
-        <div className="">
+        <div>
           <img
-            src={"../assests/backgroundImages/background1.png"}
-            alt="Item1"
+            className="bg"
+            src="../assests/backgroundImages/background1.png"
+            alt=""
           />
-          <div className="text-overlay text-2xl font-bold text-black ">
-            {" "}
-            Welcome To Your SKIT Alumni Website
+          <div className="text-overlay text-2xl font-bold text-white ">
+            <TextAnimation />
           </div>
-          <div className="button-overlay ">
+          <div className="button-overlay">
             <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
               <a href="registeration" target="_blank">
                 Register now!
@@ -44,15 +46,15 @@ export default function Home() {
 
         <div>
           <img
-            src={"../assests/backgroundImages/background2.jpg"}
-            alt="Item2"
+            className="bg"
+            src="../assests/backgroundImages/background2.jpg"
+            alt=""
           />
-          <div className="text-overlay text-2xl font-bold text-black ">
-            {" "}
-            Welcome To Your SKIT Alumni Website
+          <div className="text-overlay text-2xl font-bold text-white ">
+            <TextAnimation />
           </div>
           <div className="button-overlay">
-            <button className="bg-blue-500   hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
+            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
               <a href="registeration" target="_blank">
                 Register now!
               </a>
@@ -61,12 +63,12 @@ export default function Home() {
         </div>
         <div>
           <img
-            src={"../assests/backgroundImages/background3.jpg "}
-            alt="Item3"
+            className="bg"
+            src="../assests/backgroundImages/background3.jpg"
+            alt=""
           />
-          <div className="text-overlay text-2xl font-bold text-black ">
-            {" "}
-            Welcome To Your SKIT Alumni Website
+          <div className="text-overlay text-2xl font-bold text-white ">
+            <TextAnimation />
           </div>
           <div className="button-overlay">
             <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">

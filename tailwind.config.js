@@ -15,6 +15,9 @@ module.exports = {
           dark: "#373737",
         },
       },
+      height: {
+        vh: "80vh",
+      },
     },
   },
   plugins: [],
