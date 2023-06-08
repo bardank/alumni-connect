@@ -1,6 +1,5 @@
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
-
 import Button from "../components/UI/Button";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -21,7 +20,7 @@ export default function Home() {
         infiniteLoop
         autoPlay
         showStatus={false}
-        showArrows={false}
+        showArrows={true}
         interval={6000}
         showThumbs={false}
         showIndicators={true}
@@ -121,12 +120,11 @@ export default function Home() {
       <div className="flex justify-center items-center py-16 h-full text-black pb-6 ">
         <h5 className="text-3xl font-semibold">Gallary</h5>
       </div>
-      <div className=" gallary flex gap-3 ">
-        <GalleryImage src="./assests/gallary/pic1.png" alt="gallery-pic" />
-        <GalleryImage src="./assests/gallary/pic2.png" alt="gallery-pic" />
-        <GalleryImage src="./assests/gallary/pic3.png" alt="gallery-pic" />
-        <GalleryImage src="./assests/gallary/pic4.png" alt="gallery-pic" />
-        <GalleryImage src="./assests/gallary/pic5.png" alt="gallery-pic" />
+      <div className=" gallary flex  ">
+        <GalleryImage src="./assests/gallary/pic1.jpg" alt="gallery-pic" />
+        <GalleryImage src="./assests/gallary/pic2.jpg" alt="gallery-pic" />
+        <GalleryImage src="./assests/gallary/pic3.jpg" alt="gallery-pic" />
+        <GalleryImage src="./assests/gallary/pic4.jpg" alt="gallery-pic" />
       </div>
       <div className="text-center ">
         <a href="https://www.skit.org.in/gallery.html#" target="_blank">
@@ -184,7 +182,12 @@ const PurposeCard = ({ text, icon, heading }) => {
 const GalleryImage = ({ src, alt }) => {
   return (
     <div>
-      <img className="gallaryPic" src={src} alt={alt} />
+      <img
+        className="gallaryPic"
+        src={src}
+        alt={alt}
+        className="w-150 h-150 object-cover"
+      />
     </div>
   );
 };

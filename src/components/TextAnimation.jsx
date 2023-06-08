@@ -2,7 +2,7 @@ import React from "react";
 import TypewriterComponent from "typewriter-effect";
 const TextAnimation = () => {
   return (
-    <div>
+    <div className="text-2xl">
       <TypewriterComponent
         onInit={(typewriter) => {
           typewriter

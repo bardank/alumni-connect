@@ -124,3 +124,21 @@ label {
   height: 75vh;
   filter: brightness(40%);
 }
+
+//arrow design
+/* Custom styles for the carousel arrow buttons */
+.carousel .control-arrow {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 24px;
+  width: 10vw;
+  height: 100vh;
+  // border-radius: 60%;
+  border: 2px solid #ffffff;
+}
+
+.carousel .control-arrow:hover {
+  background-color: #ffffff;
+
+  color: #000000;
+}
