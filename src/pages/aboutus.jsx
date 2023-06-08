@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <h1 className="font-bold m-3">The SKIT Alumni Association (SKITAA)</h1>
-      <div className=" flex flex-row flex-wrap gap-2 justify-center m-5 ">
-        <div className="border  p-2   bg-white rounded-lg shadow-lg  w-[250px] h-auto text-center   ">
+      <h1 className="font-bold p-6">The SKIT Alumni Association (SKITAA)</h1>
+      <div className=" flex flex-row flex-wrap gap-2 justify-center px-6 pt-0">
+        <div className="border  p-4  bg-white rounded-lg shadow-lg  h-auto text-center   ">
           <p>
             The SKIT Alumni Association (SKITAA) was formally established in the
             year 2016, owing to the painstaking efforts and initiative of our
@@ -17,7 +17,7 @@ export default function Home() {
             organized in the year 2016.
           </p>
         </div>
-        <div className="border  p-2  bg-white rounded-lg shadow-lg  w-[250px] h-auto text-center   ">
+        <div className="border  p-4  bg-white rounded-lg shadow-lg   h-auto text-center   ">
           <p className=" flex">
             SKITAA is conducting various activities for the Alumni. The SKITAA
             is proud to say that its alumni are well settled throughout the
@@ -26,7 +26,7 @@ export default function Home() {
             in seminars and conferences.
           </p>
         </div>
-        <div className="border  p-2  bg-white rounded-lg shadow-lg  w-[250px] h-auto text-center">
+        <div className="border  p-4  bg-white rounded-lg shadow-lg   h-auto text-center">
           <p>
             Alumni of SKIT in particular have excelled and acquired positions of
             eminence in every field imaginable-from engineering to management to
@@ -35,9 +35,9 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="container m-10 ">
+      <div className="container p-6 ">
         <h1 className="font-semibold">The main objectives of SKITAA are:</h1>
-        <ul className="list-disc p-2 m-5">
+        <ul className="list-disc px-6">
           <li className="py-1">
             To serve as a forum to promote and foster relationship among the
             alumni, the present students, the staff and the management of SKIT.
@@ -73,13 +73,13 @@ export default function Home() {
         </ul>
       </div>
 
-      <div>
+      <div className="px-6 ">
         <div>
           <h3 className="text-black underline text-3xl font-bold p-1">
             Alumni Association Committee
           </h3>
-          <div class="table-container">
-            <table class="table-auto m-5 border-collapse border border-gray-400">
+          <div class="table-container pt-6 mb-6 w-full overflow-x-scroll">
+            <table class="table-auto border-collapse border w-full  border-gray-400">
               <thead>
                 <tr class="bg-secondary">
                   <th class="px-4 py-2 border-r border-white">SL.No</th>

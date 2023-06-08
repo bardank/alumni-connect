@@ -19,10 +19,10 @@ export default function Home() {
       <Navbar />
       <Carousel
         infiniteLoop
-        autoPlay
+        autoPlay={true}
         showStatus={false}
-        showArrows={false}
-        interval={6000}
+        showArrows={true}
+        interval={5000}
         showThumbs={false}
         showIndicators={true}
       >
@@ -32,16 +32,6 @@ export default function Home() {
             src="../assests/backgroundImages/background1.png"
             alt=""
           />
-          <div className="text-overlay text-2xl font-bold text-white ">
-            <TextAnimation />
-          </div>
-          <div className="button-overlay">
-            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-              <a href="registeration" target="_blank">
-                Register now!
-              </a>
-            </button>
-          </div>
         </div>
 
         <div>
@@ -50,16 +40,6 @@ export default function Home() {
             src="../assests/backgroundImages/background2.jpg"
             alt=""
           />
-          <div className="text-overlay text-2xl font-bold text-white ">
-            <TextAnimation />
-          </div>
-          <div className="button-overlay">
-            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-              <a href="registeration" target="_blank">
-                Register now!
-              </a>
-            </button>
-          </div>
         </div>
         <div>
           <img
@@ -67,33 +47,21 @@ export default function Home() {
             src="../assests/backgroundImages/background3.jpg"
             alt=""
           />
-          <div className="text-overlay text-2xl font-bold text-white ">
-            <TextAnimation />
-          </div>
-          <div className="button-overlay">
-            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-              <a href="registeration" target="_blank">
-                Register now!
-              </a>
-            </button>
-          </div>
         </div>
       </Carousel>
-      {/* {
-        <div className=" w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 ">
-          <div className="flex justify-center items-center h-full text-white  flex-col">
-            <h5 className="text-2xl font-bold">
-              Welcome To Your SKIT Alumni Website
-            </h5>
-            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-              <a href="registeration" target="_blank">
-                Register now!
-              </a>
-            </button>
-          </div>
+      <div className="flex flex-col h-full">
+        <div className="text-overlay text-2xl font-bold text-white ">
+          <TextAnimation />
         </div>
-      } */}
-      <div className="flex justify-center items-center py-16 h-full text-black">
+        <div className="button-overlay">
+          <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 m-10 rounded-3xl">
+            <a href="registeration" target="_blank">
+              Register now!
+            </a>
+          </button>
+        </div>
+      </div>
+      <div className="flex justify-center items-center pt-12 pb-8 px-8 text-black">
         <p className="text-3xl font-semibold">
           Our Purpose of Alumni Association
         </p>
@@ -140,15 +108,12 @@ export default function Home() {
           </h3>
         </a>
       </div>
-      <div className="flex justify-center items-center py-16 h-full text-black pb-6">
-        <h5 className="text-3xl font-semibold">
+      <div className="flex justify-center items-center px-10 pt-10 pb-6 h-full text-black">
+        <h5 className="text-3xl font-semibold text-center">
           Join the Alumni Association: Register Today!
         </h5>
       </div>
       <div className="flex place-items-center  flex-auto justify-items-center gap-10 place-content-center ">
-        <div className="shrink ">
-          <a href=""></a>
-        </div>
         <div className="w-80 pb-8">
           <p className="text-center pb-4">
             Welcome to the alumni community of SKIT. As a member of the alumni
@@ -157,11 +122,6 @@ export default function Home() {
             events.
           </p>
           <Button onClick={onRegisterClick} label="Register now" />
-          {/* <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-            <a href="registeration" target="_blank">
-              Register now!
-            </a>
-          </button> */}
         </div>
       </div>
       <Footer />

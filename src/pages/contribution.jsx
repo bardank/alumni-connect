@@ -6,14 +6,16 @@ import PageLayout from "../layout/PageLayout";
 const Donation = () => {
   return (
     <PageLayout>
-      <h1 className="text-center text-3xl  font-bold">Ways to Contribute</h1>
-      <div className="containerContribution  flex flex-col  justify-center  p-20">
+      <h1 className="text-center text-3xl px-10 py-2 font-bold text-blue-500">
+        Ways to Contribute
+      </h1>
+      <div className="containerContribution  flex flex-col  justify-center  md:px-20 px-6">
         <div className="left  w-full h-auto  ">
           <h2 className="font-bold text-2xl underline pb-3">
             As an alumnus/alumna, there are several ways you can contribute to
             your college and make a positive impact:
           </h2>
-          <ul className="list-disc">
+          <ul className="list-disc pl-6">
             <li>
               Mentorship Programs: Offer your expertise and guidance by becoming
               a mentor for current students. Share your experiences, provide
