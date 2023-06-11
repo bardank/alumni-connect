@@ -18,10 +18,10 @@ export default function Home() {
       <Navbar />
       <Carousel
         infiniteLoop
-        autoPlay
+        autoPlay={true}
         showStatus={false}
         showArrows={true}
-        interval={6000}
+        interval={5000}
         showThumbs={false}
         showIndicators={true}
       >
@@ -31,16 +31,6 @@ export default function Home() {
             src="../assests/backgroundImages/background1.png"
             alt=""
           />
-          <div className="text-overlay text-2xl font-bold text-white ">
-            <TextAnimation />
-          </div>
-          <div className="button-overlay">
-            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-              <a href="registeration" target="_blank">
-                Register now!
-              </a>
-            </button>
-          </div>
         </div>
 
         <div>
@@ -49,16 +39,6 @@ export default function Home() {
             src="../assests/backgroundImages/background2.jpg"
             alt=""
           />
-          <div className="text-overlay text-2xl font-bold text-white ">
-            <TextAnimation />
-          </div>
-          <div className="button-overlay">
-            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-              <a href="registeration" target="_blank">
-                Register now!
-              </a>
-            </button>
-          </div>
         </div>
         <div>
           <img
@@ -66,61 +46,49 @@ export default function Home() {
             src="../assests/backgroundImages/background3.jpg"
             alt=""
           />
-          <div className="text-overlay text-2xl font-bold text-white ">
-            <TextAnimation />
-          </div>
-          <div className="button-overlay">
-            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-              <a href="registeration" target="_blank">
-                Register now!
-              </a>
-            </button>
-          </div>
         </div>
       </Carousel>
-      {/* {
-        <div className=" w-screen h-screen bg-gradient-to-r from-cyan-500 to-blue-500 ">
-          <div className="flex justify-center items-center h-full text-white  flex-col">
-            <h5 className="text-2xl font-bold">
-              Welcome To Your SKIT Alumni Website
-            </h5>
-            <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-              <a href="registeration" target="_blank">
-                Register now!
-              </a>
-            </button>
-          </div>
+      <div className="flex flex-col h-full">
+        <div className="text-overlay text-2xl font-bold text-white ">
+          <TextAnimation />
         </div>
-      } */}
-      <div className="flex justify-center items-center py-16 h-full text-black">
+        <div className="button-overlay">
+          <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 m-10 rounded-3xl">
+            <a href="registeration" target="_blank">
+              Register now!
+            </a>
+          </button>
+        </div>
+      </div>
+      <div className="flex justify-center items-center pt-12 pb-8 px-8 text-black">
         <p className="text-3xl font-semibold">
           Our Purpose of Alumni Association
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3  mx-auto justify-center gap-4  py-4 px-8 md:px-14 lg:px-24  cursor-pointer 	">
         <PurposeCard
-          text="Our vision is a worldwide alumni network that fosters lifelong connections and engagement with the college, empowering alumni to make a positive impact in their lives and the community."
+          text="To serve as a platform to connect the institute, alumni and students to have a better interaction with each other for their holistic development."
           icon="./assests/icons/vision.png"
           heading="Vision"
         />
         <PurposeCard
-          text=" We aim to foster a spirit of lifelong learning and professional development, and to support the college's mission of promoting academic excellence, diversity, and social responsibility."
+          text=" To cultivate a sense of belonging and community among alumni, connecting them with each other and with the institution.
+          To provide a platform for alumni to network and establish professional connections, helping them to leverage their shared experiences and expertise with students."
           icon="./assests/icons/mission.png"
           heading="Mission"
         />
         <PurposeCard
-          text=" Our objectives are to increase alumni engagement through diverse
-            programs and events, provide networking resources for career growth,
-            and support the college's strategic initiatives through fundraising
-            and advocacy."
+          text=" To organize and establish scholarship funds to help the needy and deserving students.
+To exchange professional knowledge, organize technical conferences, seminars workshops & training courses.
+To provide career development guidance."
           icon="./assests/icons/objectives.png"
           heading="Objective"
         />
       </div>
       <div className="flex justify-center items-center py-16 h-full text-black pb-6 ">
-        <h5 className="text-3xl font-semibold">Gallary</h5>
+        <h5 className="text-3xl font-semibold">Gallery</h5>
       </div>
-      <div className=" gallary flex  ">
+      <div className=" gallary flex gap-2  ">
         <GalleryImage src="./assests/gallary/pic1.jpg" alt="gallery-pic" />
         <GalleryImage src="./assests/gallary/pic2.jpg" alt="gallery-pic" />
         <GalleryImage src="./assests/gallary/pic3.jpg" alt="gallery-pic" />
@@ -138,15 +106,12 @@ export default function Home() {
           </h3>
         </a>
       </div>
-      <div className="flex justify-center items-center py-16 h-full text-black pb-6">
-        <h5 className="text-3xl font-semibold">
+      <div className="flex justify-center items-center px-10 pt-10 pb-6 h-full text-black">
+        <h5 className="text-3xl font-semibold text-center">
           Join the Alumni Association: Register Today!
         </h5>
       </div>
       <div className="flex place-items-center  flex-auto justify-items-center gap-10 place-content-center ">
-        <div className="shrink ">
-          <a href=""></a>
-        </div>
         <div className="w-80 pb-8">
           <p className="text-center pb-4">
             Welcome to the alumni community of SKIT. As a member of the alumni
@@ -155,11 +120,6 @@ export default function Home() {
             events.
           </p>
           <Button onClick={onRegisterClick} label="Register now" />
-          {/* <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 h-12 m-10 rounded-3xl">
-            <a href="registeration" target="_blank">
-              Register now!
-            </a>
-          </button> */}
         </div>
       </div>
       <Footer />
@@ -172,7 +132,7 @@ const PurposeCard = ({ text, icon, heading }) => {
     <div className="border-primary border-2 hover:border-blue-500 bg-white p-4 rounded-xl">
       <div className="text-center mb-2">
         <img src={icon} alt="Icon" className="w-8 h-8 mx-auto" />
-        <h1 className="font-medium">{heading}</h1>
+        <h1 className="font-medium text-3xl">{heading}</h1>
       </div>
       {text}
     </div>

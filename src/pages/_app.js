@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <ApolloProvider client={client}>
-      {/* <PopUpNotification notifications={notifications} /> */}
+      <PopUpNotification notifications={notifications} />
       <Component {...pageProps} />
     </ApolloProvider>
   );

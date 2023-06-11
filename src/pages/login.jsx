@@ -19,7 +19,7 @@ const Login = () => {
   });
 
   const { setUser } = useAuth();
-  const { setNotification } = useNotification(state=>state);
+  const { setNotification } = useNotification((state) => state);
   const handleInputChange = (e) => {
     setInputVariables((prevs) => ({
       ...inputVariables,
@@ -30,30 +30,27 @@ const Login = () => {
   const [login, { loading, error, data }] = useMutation(LOGIN, {
     onCompleted: (data) => {
       console.log(data.login);
-      if (data?.login?.["success"] ) {
+      if (data?.login?.["success"]) {
         const user = data.login["user"];
-        console.log({user});
+        console.log({ user });
         setUser(user.accessToken, user._id, user.email, user.fullName);
         setNotification(uuid(), "Login Successfull", "Success", 3000);
-        router.push("/dashboard");
-
+        console.log("pushing to home");
       }
       if (!data?.login?.success) {
         setNotification(uuid(), data.login.message, "Error", 3000);
       }
     },
 
-    
     onError: (error) => {
       console.log(error);
       // setNotification(uuid(), error.message, "Error", 3000);
-    }
+    },
   });
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if(!loading){
-
+    if (!loading) {
       login({
         variables: {
           email: inputVariables.email,

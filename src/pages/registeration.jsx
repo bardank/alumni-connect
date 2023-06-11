@@ -30,7 +30,9 @@ export default function Home() {
 
   const [createAlumni, { loading, error, data }] = useMutation(CREATE_ALUMNI, {
     variables: {},
-    onCompleted: (data) => {},
+    onCompleted: (data) => {
+      resetForm();
+    },
   });
 
   const onChange = (e) => {

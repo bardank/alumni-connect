@@ -1,7 +1,7 @@
 import React from "react";
-import Cross from "../../assets/Notification/Cross.svg";
-import Check from "../../assets/Notification/Check.svg";
-import Loading from "../../assets/Notification/Loading.svg";
+// import Cross from "../../assets/Notification/Cross.svg";
+// import Check from "../../assets/Notification/Check.svg";
+// import Loading from "../../assets/Notification/Loading.svg";
 
 const PopUpNotification = ({ notifications }) => {
   return (
@@ -15,12 +15,12 @@ const PopUpNotification = ({ notifications }) => {
           }`}
           key={item.id}
         >
-          <span className="px-2">
+          {/* <span className="px-2">
             {item.status === "Success" ? <Check className="h-6" /> : ""}
             {item.status === "Loading" ? <Loading className="h-6" /> : ""}
 
             {item.status === "Error" ? <Cross className="h-6" /> : ""}
-          </span>
+          </span> */}
           {item.message}
         </div>
       ))}

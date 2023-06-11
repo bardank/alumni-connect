@@ -6,14 +6,16 @@ import PageLayout from "../layout/PageLayout";
 const Donation = () => {
   return (
     <PageLayout>
-      <h1 className="text-center text-3xl  font-bold">Ways to Contribute</h1>
-      <div className="containerContribution  flex flex-col  justify-center  p-20">
+      <h1 className="text-center text-3xl m-10 px-10 py-2 font-bold text-blue-500">
+        Ways to Contribute
+      </h1>
+      <div className="containerContribution  flex flex-col  justify-center  md:px-20 px-6">
         <div className="left  w-full h-auto  ">
           <h2 className="font-bold text-2xl underline pb-3">
             As an alumnus/alumna, there are several ways you can contribute to
             your college and make a positive impact:
           </h2>
-          <ul className="list-disc">
+          <ul className="list-disc pl-6">
             <li>
               Mentorship Programs: Offer your expertise and guidance by becoming
               a mentor for current students. Share your experiences, provide
@@ -64,23 +66,25 @@ const Donation = () => {
                 <th className="border-2 border-black py-2 px-4">
                   Sri Krishna Institute Of Technology:
                 </th>
-                <td className="py-2 px-4">ICICI bank</td>
+                <td className="py-2 px-4">Axis Bank</td>
               </tr>
               <tr className="border-2 border-black">
                 <th className="border-2 border-black py-2 px-4">
                   Account Number:
                 </th>
-                <td className="py-2 px-4">1234567890</td>
+                <td className="py-2 px-4">922010022457057</td>
               </tr>
               <tr className="border-2 border-black">
                 <th className="border-2 border-black py-2 px-4">
                   Account Name:
                 </th>
-                <td className="py-2 px-4">Your College Alumni Fund</td>
+                <td className="py-2 px-4">
+                  Sri Krishna Institute of Technology-Alumni
+                </td>
               </tr>
               <tr className="border-2 border-black">
-                <th className="border-2 border-black py-2 px-4">Branch:</th>
-                <td className="py-2 px-4">City Branch</td>
+                <th className="border-2 border-black py-2 px-4">IFSC Code:</th>
+                <td className="py-2 px-4">UTIB0002926</td>
               </tr>
             </tbody>
           </table>

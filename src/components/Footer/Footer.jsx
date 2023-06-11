@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
         </div> */}
 
-        <div className="bg-primary p-2 w-screen ">
+        <div className="bg-primary p-2 w-screen pt-6">
           <ul className="flex flex-row gap-8 justify-center pb-3 ">
             <SocialLink
               link="https://www.facebook.com/skit.org.in?modal=admin_todo_tour"
@@ -119,7 +119,7 @@ const Footer = () => {
               iconSrc="./assests/icons/pinterest.png"
             />
           </ul>
-          <p className="text-center">
+          <p className="text-center text-white">
             &copy; Copyright 2023 · All rights reserved.
           </p>
         </div>
