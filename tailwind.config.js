@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+// /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,15 +9,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        ...colors,
         primary: "#0E9105",
         secondary: "#337AB7",
         primary: "#0E9105",
-        customGray: {
-          dark: "#373737",
-        },
-      },
-      height: {
-        vh: "80vh",
       },
     },
   },
