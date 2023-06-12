@@ -27,6 +27,8 @@ const useStore = create((set) => ({
   removeUser: () => {
     localStorage.removeItem("alumni-connect");
     set((state) => ({
+        isAuthenticated: false,
+        isLoading: false,
       user: {
         fullName: "",
         email: "",
@@ -42,7 +44,6 @@ const useStore = create((set) => ({
         name: "",
         phone: "",
         id: "",
-        verifiedPhone: false,
       },
     }));
   },
