@@ -15,7 +15,7 @@ const authLink = setContext((_, {
 }) => {
     let token;
     if (typeof window !== "undefined") {
-        token = localStorage.getItem("alumni-connect-token");
+        token = localStorage.getItem("alumni-connect");
     }
     // return the headers to the context so httpLink can read them
     return {

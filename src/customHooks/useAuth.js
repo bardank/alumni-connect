@@ -9,13 +9,15 @@ const useStore = create((set) => ({
     id: "",
   },
   setUser: (token, id, email, fullName) => {
+    console.log({ token, id, email, fullName });
     if (token) {
-      localStorage.setItem("rent-app-token", token);
+      localStorage.setItem("alumni-connect", token);
     }
+    console.log(localStorage.getItem("alumni-connect"));
     set((state) => ({
       isAuthenticated: true,
-      isLoading : false,
-       user: {
+      isLoading: false,
+      user: {
         fullName: fullName,
         email: email,
         id: id,
@@ -23,7 +25,7 @@ const useStore = create((set) => ({
     }));
   },
   removeUser: () => {
-    localStorage.removeItem("rent-app-token");
+    localStorage.removeItem("alumni-connect");
     set((state) => ({
       user: {
         fullName: "",
@@ -35,7 +37,7 @@ const useStore = create((set) => ({
   setAuthincatedUser: () => {
     set((state) => ({
       isAuthenticated: false,
-      isLoading : false,
+      isLoading: false,
       user: {
         name: "",
         phone: "",
@@ -43,7 +45,7 @@ const useStore = create((set) => ({
         verifiedPhone: false,
       },
     }));
-  }
+  },
 }));
 
 export const useAuth = useStore;

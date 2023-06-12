@@ -32,10 +32,10 @@ const Login = () => {
       console.log(data.login);
       if (data?.login?.["success"]) {
         const user = data.login["user"];
-        console.log({ user });
+        // console.log({ user });
         setUser(user.accessToken, user._id, user.email, user.fullName);
         setNotification(uuid(), "Login Successfull", "Success", 3000);
-        console.log("pushing to home");
+        router.push("/dashboard");
       }
       if (!data?.login?.success) {
         setNotification(uuid(), data.login.message, "Error", 3000);
