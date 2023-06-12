@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
-const PageLayout = ({ children }) => {
+const PageLayout = ({ children, className }) => {
   return (
     <div className="min-h-screen w-full">
       <Navbar />

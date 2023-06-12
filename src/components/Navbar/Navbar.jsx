@@ -40,7 +40,7 @@ const Navbar = () => {
           <NavbarItem link="/aboutus" title={"About us"} />
           <NavbarItem link="/alumni-directory" title={"Alumni Directory"} />
           <NavbarItem link="/activities" title={"Activities"} />
-          <NavbarItem link="/opportunity" title={"Opportunity"} />
+          {/* <NavbarItem link="/opportunity" title={"Opportunity"} /> */}
           <NavbarItem link="/contribution" title={"Contribution"} />
           <NavbarItem link="/contactus" title={"Contact Us"} />
         </ul>

@@ -1,7 +1,7 @@
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 
-const SearchBar = () => {
+const SearchBar = ({ onChange, value }) => {
   return (
     <>
       <div className="flex justify-center w-full">
@@ -11,8 +11,10 @@ const SearchBar = () => {
             name="text"
             placeholder="Search..."
             type="search"
+            value={value}
+            onChange={onChange}
           />
-          <AiOutlineSearch className="text-2xl" />
+          <AiOutlineSearch className="text-2xl cursor-pointer" />
         </div>
       </div>
     </>

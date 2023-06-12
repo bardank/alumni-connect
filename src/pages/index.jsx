@@ -28,7 +28,7 @@ export default function Home() {
         <div>
           <img
             className="bg"
-            src="../assests/backgroundImages/background1.png"
+            src="https://lh3.googleusercontent.com/p/AF1QipPWem0_IhZawD6divI0VshHXBYlVzBnibB6FIc=s1360-w1360-h1020"
             alt=""
           />
         </div>
@@ -36,17 +36,24 @@ export default function Home() {
         <div>
           <img
             className="bg"
-            src="../assests/backgroundImages/background2.jpg"
+            src="https://www.skit.org.in/assets/images/gallery/volley_ball/1.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             className="bg"
-            src="../assests/backgroundImages/background3.jpg"
+            src="https://www.skit.org.in/assets/images/gallery/campus/1h.jpg"
             alt=""
           />
         </div>
+        {/* <div>
+          <img
+            className="bg"
+            src="../assests/backgroundImages/background3.jpg"
+            alt=""
+          />
+        </div> */}
       </Carousel>
       <div className="flex flex-col h-full">
         <div className="text-overlay text-2xl font-bold text-white ">

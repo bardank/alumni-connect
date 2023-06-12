@@ -123,6 +123,9 @@ const Footer = () => {
             &copy; Copyright 2023 · All rights reserved.
           </p>
         </div>
+        <div className="bg-black text-white w-full text-center py-4 ">
+          Created by CSE Department
+        </div>
       </footer>
     </div>
   );

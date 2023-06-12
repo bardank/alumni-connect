@@ -8,7 +8,8 @@ import TextArea from "../components/UI/TextArea";
 import Button from "../components/UI/Button";
 import { useMutation } from "@apollo/client";
 import CREATE_ALUMNI from "../graphql/mutation/CREATE_ALUMNI.JSX";
-
+import { useNotification } from "../customHooks/useNotification";
+import { uuid } from "uuidv4";
 export default function Home() {
   const [inputData, setInputVariable] = useState({
     firstName: "",
@@ -32,8 +33,16 @@ export default function Home() {
     variables: {},
     onCompleted: (data) => {
       resetForm();
+      setNotification(
+        uuid(),
+        "Alumni registered successfully",
+        "Success",
+        3000
+      );
     },
   });
+
+  const { setNotification } = useNotification();
 
   const onChange = (e) => {
     setInputVariable((prevs) => ({
@@ -65,6 +74,7 @@ export default function Home() {
   const handleRegisteration = (e) => {
     e.preventDefault();
     console.log({ inputData });
+    setNotification(uuid(), "Submitting", "Success", 3000);
     createAlumni({
       variables: {
         createAlumniInput: {
@@ -266,7 +276,7 @@ export default function Home() {
                 />
               </div>
             </div>
-            <Button type="submit" label="Submit" />
+            <Button type="submit" label="Submit" className="my-4  w-20" />
           </form>
         </div>
       </div>
