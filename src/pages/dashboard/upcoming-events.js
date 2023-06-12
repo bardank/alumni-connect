@@ -29,6 +29,7 @@ export default function Home() {
   });
   return (
     <AdminLayout>
+    <h1 className="p-4 font-bold text-center text-3xl">Upcoming Events</h1>
       <div>
         <EventFormDash />
       </div>

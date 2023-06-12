@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import Footer from "../components/Footer/Footer";
-import Navbar from "../components/Navbar/Navbar";
-import Select from "../components/UI/Select";
-import Input from "../components/UI/Input";
-import TextArea from "../components/UI/TextArea";
-import Button from "../components/UI/Button";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import Select from "../../components/UI/Select";
+import Input from "../../components/UI/Input";
+import TextArea from "../../components/UI/TextArea";
+import Button from "../../components/UI/Button";
 import { useMutation } from "@apollo/client";
-import { useNotification } from "../customHooks/useNotification";
+import { useNotification } from "../../customHooks/useNotification";
 import { uuid } from "uuidv4";
-import CREATE_ALUMNI from "../graphql/mutation/CREATE_ALUMNI.JSX";
+import CREATE_ALUMNI from "../../graphql/mutation/CREATE_ALUMNI.JSX";
+import AdminLayout from "../../layout/AdminLayout";
 
 export default function Home() {
   const { setNotification } = useNotification();
@@ -86,7 +87,7 @@ export default function Home() {
           usn: inputData.usn,
           yearOfCompletion: parseInt(inputData.graduationYear),
           linkedIn: "",
-          isApproved: false,
+          isApproved: true,
           branch: inputData.branch,
           isPlacementProvidedBySkit: inputData.isPlacementProvidedBySkit,
         },
@@ -95,12 +96,11 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <Navbar />
+    <AdminLayout>
       <div className="px-8">
         <div className="">
           <h4 className="text-center font-semibold text-2xl pt-6 ">
-            Register As Alumni
+            Register Alumni
           </h4>
           <form className="pb-4 " onSubmit={(e) => handleRegisteration(e)}>
             <div className=" pb-4 ">
@@ -267,7 +267,7 @@ export default function Home() {
               <div className="w-full md:w-auto">
                 <TextArea
                   label="Suggestion"
-                  placeholder="send your suggestion"
+                  placeholder="Alumni suggestion"
                   value={inputData.suggestion}
                   onChange={onChange}
                   name="suggestion"
@@ -278,8 +278,7 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <Footer />
-    </div>
+    </AdminLayout>
   );
 }
 
