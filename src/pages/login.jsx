@@ -37,7 +37,7 @@ const Login = () => {
         setUser(user.accessToken, user._id, user.email, user.fullName);
 
         setNotification(uuid(), "Login Successfull", "Success", 3000);
-        router.push("/dashboard");
+        router.push("/dashboard/alumni-directory");
       }
       if (!data?.login?.success) {
         setNotification(uuid(), data.login.message, "Error", 3000);

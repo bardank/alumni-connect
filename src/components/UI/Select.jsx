@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Select({ label, name, onChange }) {
+export default function Select({ label, name, onChange, value }) {
   return (
-    <div>
-      <div className="w-full md:w-auto pb-3">
+    <div className="w-full">
+      <div className="w-full md:w-auto pb-3 gap-2 flex flex-col">
         <label>{label}:</label>
-        <select name={name} className="  " onChange={onChange}>
+        <select name={name} className="w-full p-2" onChange={onChange}>
           <option name={name} value="CSE">
             Computer Science & Engg (CSE)
           </option>
