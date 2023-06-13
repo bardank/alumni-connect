@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { FETCH_EVENTS } from "../graphql/query/FETCH_EVENTS";
 import { useQuery } from "@apollo/client";
 import moment from "moment";
+import PageLayout from "../layout/PageLayout";
 export default function Home() {
   const [queryData, setQUeryData] = useState({
     count: 10,
@@ -27,10 +28,8 @@ export default function Home() {
   });
 
   return (
-    <div>
-      <Navbar />
-      <div className="searchBar"></div>
-      <h2 className="text-center text-2xl px-10 py-2 font-bold text-blue-500">Upcoming Events</h2>
+    <PageLayout>
+      <h2 className="text-center text-2xl px-10 py-2 font-bold text-secondary">Upcoming Events & Activivties</h2>
       <div className="m-4 flex flex-wrap gap-5 justify-center">
         {loading && <div>loading...</div>}
         {events.map((item) => (
@@ -42,9 +41,7 @@ export default function Home() {
           />
         ))}
       </div>
-
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }
 const Reunion = ({ year, date, location }) => {

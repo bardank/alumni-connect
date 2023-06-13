@@ -53,7 +53,7 @@ export default function Home() {
           <TextAnimation />
         </div>
         <div className="button-overlay">
-          <button className="bg-blue-500  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 m-10 rounded-3xl">
+          <button className="bg-secondary  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 m-10 rounded-3xl">
             <a href="registeration" target="_blank">
               Register now!
             </a>

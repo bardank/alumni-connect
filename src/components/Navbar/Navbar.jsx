@@ -45,10 +45,10 @@ const Navbar = () => {
           <NavbarItem link="/contactus" title={"Contact Us"} />
         </ul>
         <div
-          className="md:hidden text-center flex items-center float-right pr-4"
+          className="md:hidden text-center flex items-center float-right md:pr-4"
           onClick={() => setNav(!nav)}
         >
-          <p className="bg-green-600 p-1.5 text-white rounded-lg cursor-pointer hover:bg-green-700 px-6">
+          <p className="bg-green-600 p-4 text-white  cursor-pointer hover:bg-green-700 px-6">
             {nav ? <AiOutlineClose /> : <AiOutlineMenu />}
           </p>
         </div>

@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
+import PageLayout from "@/layout/PageLayout";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 export default function Home() {
   return (
-    <div>
-      <Navbar />
+    <PageLayout>
       <h1 className="font-bold p-6">The SKIT Alumni Association (SKITAA)</h1>
       <div className=" flex flex-row flex-wrap gap-2 justify-center px-6 pt-0">
         <div className="border  p-4  bg-white rounded-lg shadow-lg  h-auto text-center   ">
@@ -73,93 +73,92 @@ export default function Home() {
           <h3 className="text-black underline text-3xl font-bold p-1">
             Alumni Association Committee
           </h3>
-          <div class="table-container pt-6 mb-6 w-full overflow-x-scroll">
-            <table class="table-auto border-collapse border w-full  border-gray-400">
+          <div className="table-container pt-6 mb-6 w-full overflow-x-scroll">
+            <table className="table-auto border-collapse border w-full  border-gray-400">
               <thead>
-                <tr class="bg-secondary">
-                  <th class="px-4 py-2 border-r border-white">SL.No</th>
-                  <th class="px-4 py-2 border-r border-white">Name</th>
-                  <th class="px-4 py-2 border-r border-white">Designation</th>
-                  <th class="px-4 py-2 border-r border-white">Department </th>
-                  <th class="px-4 py-2 border-r border-white">
+                <tr className="bg-secondary">
+                  <th className="px-4 py-2 border-r border-white">SL.No</th>
+                  <th className="px-4 py-2 border-r border-white">Name</th>
+                  <th className="px-4 py-2 border-r border-white">Designation</th>
+                  <th className="px-4 py-2 border-r border-white">Department </th>
+                  <th className="px-4 py-2 border-r border-white">
                     Contact Details
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="border px-4 py-2">1</td>
-                  <td class="border px-4 py-2">Dr. Mahesha K</td>
-                  <td class="border px-4 py-2">Principal / Chairman</td>
-                  <td class="border px-4 py-2">SKIT</td>
-                  <td class="border px-4 py-2">9148760346</td>
+                  <td className="border px-4 py-2">1</td>
+                  <td className="border px-4 py-2">Dr. Mahesha K</td>
+                  <td className="border px-4 py-2">Principal / Chairman</td>
+                  <td className="border px-4 py-2">SKIT</td>
+                  <td className="border px-4 py-2">9148760346</td>
                 </tr>
 
                 <tr>
-                  <td class="border px-4 py-2">2</td>
-                  <td class="border px-4 py-2">Mr.Anil Kumar </td>
-                  <td class="border px-4 py-2">Convener</td>
-                  <td class="border px-4 py-2">ISE</td>
-                  <td class="border px-4 py-2">7795468816</td>
+                  <td className="border px-4 py-2">2</td>
+                  <td className="border px-4 py-2">Mr.Anil Kumar </td>
+                  <td className="border px-4 py-2">Convener</td>
+                  <td className="border px-4 py-2">ISE</td>
+                  <td className="border px-4 py-2">7795468816</td>
                 </tr>
 
                 <tr>
-                  <td class="border px-4 py-2">3</td>
-                  <td class="border px-4 py-2">Mrs. Kusuma H P </td>
-                  <td class="border px-4 py-2">Member</td>
-                  <td class="border px-4 py-2">CSE</td>
-                  <td class="border px-4 py-2">7204210895</td>
+                  <td className="border px-4 py-2">3</td>
+                  <td className="border px-4 py-2">Mrs. Kusuma H P </td>
+                  <td className="border px-4 py-2">Member</td>
+                  <td className="border px-4 py-2">CSE</td>
+                  <td className="border px-4 py-2">7204210895</td>
                 </tr>
 
                 <tr>
-                  <td class="border px-4 py-2">4</td>
-                  <td class="border px-4 py-2">Mrs. Gnaneshwari </td>
-                  <td class="border px-4 py-2">Member</td>
-                  <td class="border px-4 py-2">CSE</td>
-                  <td class="border px-4 py-2">9113571353</td>
+                  <td className="border px-4 py-2">4</td>
+                  <td className="border px-4 py-2">Mrs. Gnaneshwari </td>
+                  <td className="border px-4 py-2">Member</td>
+                  <td className="border px-4 py-2">CSE</td>
+                  <td className="border px-4 py-2">9113571353</td>
                 </tr>
 
                 <tr>
-                  <td class="border px-4 py-2">5</td>
-                  <td class="border px-4 py-2">Ms. Sindhu G</td>
-                  <td class="border px-4 py-2">Member</td>
-                  <td class="border px-4 py-2">ISE</td>
-                  <td class="border px-4 py-2">8618414661</td>
+                  <td className="border px-4 py-2">5</td>
+                  <td className="border px-4 py-2">Ms. Sindhu G</td>
+                  <td className="border px-4 py-2">Member</td>
+                  <td className="border px-4 py-2">ISE</td>
+                  <td className="border px-4 py-2">8618414661</td>
                 </tr>
                 <tr>
-                  <td class="border px-4 py-2">6</td>
-                  <td class="border px-4 py-2">Mr. Dinesh</td>
-                  <td class="border px-4 py-2">Member</td>
-                  <td class="border px-4 py-2">MECH</td>
-                  <td class="border px-4 py-2">8123001521</td>
+                  <td className="border px-4 py-2">6</td>
+                  <td className="border px-4 py-2">Mr. Dinesh</td>
+                  <td className="border px-4 py-2">Member</td>
+                  <td className="border px-4 py-2">MECH</td>
+                  <td className="border px-4 py-2">8123001521</td>
                 </tr>
                 <tr>
-                  <td class="border px-4 py-2">7</td>
-                  <td class="border px-4 py-2">Mr. Vishwa Pavan </td>
-                  <td class="border px-4 py-2">Member</td>
-                  <td class="border px-4 py-2">CIVIL</td>
-                  <td class="border px-4 py-2">7892233866</td>
+                  <td className="border px-4 py-2">7</td>
+                  <td className="border px-4 py-2">Mr. Vishwa Pavan </td>
+                  <td className="border px-4 py-2">Member</td>
+                  <td className="border px-4 py-2">CIVIL</td>
+                  <td className="border px-4 py-2">7892233866</td>
                 </tr>
                 <tr>
-                  <td class="border px-4 py-2">8</td>
-                  <td class="border px-4 py-2">Mrs. Chaitra </td>
-                  <td class="border px-4 py-2">Member</td>
-                  <td class="border px-4 py-2">ECE</td>
-                  <td class="border px-4 py-2">9663301820</td>
+                  <td className="border px-4 py-2">8</td>
+                  <td className="border px-4 py-2">Mrs. Chaitra </td>
+                  <td className="border px-4 py-2">Member</td>
+                  <td className="border px-4 py-2">ECE</td>
+                  <td className="border px-4 py-2">9663301820</td>
                 </tr>
                 <tr>
-                  <td class="border px-4 py-2">9</td>
-                  <td class="border px-4 py-2">Mr. Naveen </td>
-                  <td class="border px-4 py-2">Member</td>
-                  <td class="border px-4 py-2">ECE</td>
-                  <td class="border px-4 py-2">6364644942</td>
+                  <td className="border px-4 py-2">9</td>
+                  <td className="border px-4 py-2">Mr. Naveen </td>
+                  <td className="border px-4 py-2">Member</td>
+                  <td className="border px-4 py-2">ECE</td>
+                  <td className="border px-4 py-2">6364644942</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }
