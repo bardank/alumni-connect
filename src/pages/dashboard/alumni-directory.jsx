@@ -2,13 +2,19 @@ import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { FETCH_ALUMNIS } from "../../graphql/query/FETCH_ALUMNIS";
+import DELETE_ALUMNI from "../../graphql/mutation/DELETE_ALUMUNI";
 import Pagination from "../../components/Pagination/Pagination";
 import AdminLayout from "../../layout/AdminLayout";
 import EditAlumniModal from "../../modals/EditAlumniModal";
 import { BiCheck } from "react-icons/bi";
+import { client } from "@/graphql/client";
+import { useNotification } from "@/customHooks/useNotification";
+import { uuid } from "uuidv4";
 
 export default function Home() {
   const router = useRouter();
+
+  const { setNotification } = useNotification();
   const [alumniList, setAlumniList] = useState([]);
 
   const [editModal, setEditModal] = useState(false);
@@ -33,6 +39,24 @@ export default function Home() {
   const editAlumni = (alumni) => {
     setAlumniData(alumni);
     setEditModal(true);
+  };
+
+  const deleteAlumni = async (id) => {
+    console.log(id);
+    try {
+      const { data } = await client.mutate({
+        mutation: DELETE_ALUMNI,
+        variables: {
+          deleteAlumniId: id,
+        },
+      });
+      if (data.deleteAlumni.success) {
+        setNotification(uuid(), "Alumni deleted successfully", "Success", 3000);
+        setQUeryData({ count: 9, pageNo: 1 });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onPageChange = (pageNo) => {
@@ -71,6 +95,7 @@ export default function Home() {
                 key={alumni.id}
                 isApproved={alumni.isApproved}
                 editAlumni={() => editAlumni(alumni)}
+                onDelete={() => deleteAlumni(alumni._id)}
               />
             );
           })}
@@ -85,7 +110,14 @@ export default function Home() {
   );
 }
 
-const AlumniProfile = ({ name, usn, passingYear, isApproved, editAlumni }) => {
+const AlumniProfile = ({
+  name,
+  usn,
+  passingYear,
+  isApproved,
+  editAlumni,
+  onDelete,
+}) => {
   return (
     <div className="card bg-white rounded-lg shadow-lg p-6 flex flex-col justify-center items-center w-[250px] h-[300px]">
       <div className="mb-4">
@@ -113,6 +145,14 @@ const AlumniProfile = ({ name, usn, passingYear, isApproved, editAlumni }) => {
             onClick={() => editAlumni()}
           >
             Edit
+          </button>
+
+          <button
+            className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-800"
+            type=""
+            onClick={() => onDelete()}
+          >
+            Delete
           </button>
         </div>
       </div>
