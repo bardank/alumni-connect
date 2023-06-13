@@ -5,6 +5,10 @@ import { FETCH_EVENTS } from "../graphql/query/FETCH_EVENTS";
 import { useQuery } from "@apollo/client";
 import moment from "moment";
 import PageLayout from "../layout/PageLayout";
+import {IoLocation} from "react-icons/io5";
+import {BsCalendarDate} from "react-icons/bs";
+import {IoMdTime} from "react-icons/io";
+
 export default function Home() {
   const [queryData, setQUeryData] = useState({
     count: 10,
@@ -28,9 +32,8 @@ export default function Home() {
   });
 
   return (
-    <PageLayout>
-      <h2 className="text-center text-2xl px-10 py-2 font-bold text-secondary">Upcoming Events & Activivties</h2>
-      <div className="m-4 flex flex-wrap gap-5 justify-center">
+    <PageLayout className={"pt-6"} lable="Upcoming Events & Activities">
+      <div className="m-4 pt-8 flex flex-wrap gap-5 justify-center">
         {loading && <div>loading...</div>}
         {events.map((item) => (
           <UpcomingEvents
@@ -44,35 +47,38 @@ export default function Home() {
     </PageLayout>
   );
 }
-const Reunion = ({ year, date, location }) => {
-  return (
-    <div className=" border  p-2  bg-white rounded-lg shadow-lg  w-[250px] h-[180px] text-center ">
-      <h3 className="text-lg font-bold mb-2">Class of {year}</h3>
-      <p className="text-gray-500 mb-2">Date:{date}</p>
-      <p className="text-gray-500 mb-4">Location:{location}</p>
-      <button
-        className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-800"
-        type=""
-      >
-        RSVP Now
-      </button>
-    </div>
-  );
-};
+
 
 const UpcomingEvents = ({ eventName, date, location, time }) => {
   return (
-    <div className=" border  p-2  bg-white rounded-lg shadow-lg  w-[250px] h-[200px] text-center ">
-      <h3 className="text-lg font-bold mb-2">{eventName}</h3>
-      <p className="text-gray-500 mb-2">Date:{date}</p>
-      <p className="text-gray-500 mb-2">Location:{location}</p>
-      <p className="text-gray-500 mb-2">Time:{time} onward</p>
-      <button
-        className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-800"
-        type=""
-      >
-        RSVP Now
-      </button>
+    <div className=" border  p-2  bg-white rounded-lg shadow hover:shadow-2xl cursor-default w-[300px] flex flex-col text-center ">
+      <div className="bg-secondary rounded px-8 ">
+
+        <h3 className="text-lg text-white capitalize  font-bold py-1">{eventName}</h3>
+      </div>
+      <div className="px-4 ">
+
+        <DetailItem lable={location} icon={<IoLocation className="text-secondary text-2xl" />} />
+        <DetailItem lable={date} icon={<BsCalendarDate className="text-secondary text-2xl" />} />
+        <DetailItem lable={time} icon={<IoMdTime className="text-secondary text-2xl" />} />
+      </div>
+     
+     
     </div>
   );
 };
+const DetailItem = ({ lable, icon }) => {
+ 
+  return (
+     <div className="flex items-center gap-4">
+        <div className="">
+          {
+            icon
+          }
+        </div>
+        <div className="flex justify-center items-center p-3">
+          <p className=" mb-2">{lable}</p>
+        </div>
+      </div>
+  )
+}

@@ -5,10 +5,7 @@ import PageLayout from "../layout/PageLayout";
 
 const Donation = () => {
   return (
-    <PageLayout>
-      <h1 className="text-center text-3xl m-10 px-10 py-2 font-bold text-secondary">
-        Ways to Contribute
-      </h1>
+    <PageLayout lable={"Ways to Contribute"}>
       <div className="containerContribution  flex flex-col  justify-center  md:px-20 px-6">
         <div className="left  w-full h-auto  ">
           <h2 className="font-bold text-2xl underline pb-3">

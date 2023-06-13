@@ -4,10 +4,11 @@ import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 export default function Home() {
   return (
-    <PageLayout>
-      <h1 className="font-bold p-6">The SKIT Alumni Association (SKITAA)</h1>
+    <PageLayout className={"flex flex-col  items-center"} lable={"The SKIT Alumni Association (SKITAA)"}>
+      <div className="w-[80%] flex flex-col  items-center ">
+
       <div className=" flex flex-row flex-wrap gap-2 justify-center px-6 pt-0">
-        <div className="border  p-4  bg-white rounded-lg shadow-lg  h-auto text-center   ">
+        <div className="border  p-4  bg-white rounded-lg   h-auto text-center   ">
           <p>
             The SKIT Alumni Association (SKITAA) was formally established in the
             year 2016, owing to the painstaking efforts and initiative of our
@@ -17,7 +18,7 @@ export default function Home() {
             organized in the year 2016.
           </p>
         </div>
-        <div className="border  p-4  bg-white rounded-lg shadow-lg   h-auto text-center   ">
+        <div className="border  p-4  bg-white rounded-lg    h-auto text-center   ">
           <p className=" flex">
             SKITAA is conducting various activities for the Alumni. The SKITAA
             is proud to say that its alumni are well settled throughout the
@@ -26,7 +27,7 @@ export default function Home() {
             in seminars and conferences.
           </p>
         </div>
-        <div className="border  p-4  bg-white rounded-lg shadow-lg   h-auto text-center">
+        <div className="border  p-4  bg-white rounded-lg    h-auto text-center">
           <p>
             Alumni of SKIT in particular have excelled and acquired positions of
             eminence in every field imaginable-from engineering to management to
@@ -36,7 +37,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container p-6 ">
-        <h1 className="font-semibold">The main objectives of SKITAA are:</h1>
+        <h1 className="font-semibold text-xl pb-4">The main objectives of SKITAA are:</h1>
         <ul className="list-disc px-6">
           <li className="py-1">
             To promote a lifelong relation and to act as a forum for the
@@ -74,14 +75,14 @@ export default function Home() {
             Alumni Association Committee
           </h3>
           <div className="table-container pt-6 mb-6 w-full overflow-x-scroll">
-            <table className="table-auto border-collapse border w-full  border-gray-400">
+            <table className="table-auto border-collapse  w-full border border-gray-300 rounded-lg  ">
               <thead>
                 <tr className="bg-secondary">
-                  <th className="px-4 py-2 border-r border-white">SL.No</th>
-                  <th className="px-4 py-2 border-r border-white">Name</th>
-                  <th className="px-4 py-2 border-r border-white">Designation</th>
-                  <th className="px-4 py-2 border-r border-white">Department </th>
-                  <th className="px-4 py-2 border-r border-white">
+                  <th className="px-4 text-white py-2 border-r border-white">SL.No</th>
+                  <th className="px-4 text-white py-2 border-r border-white">Name</th>
+                  <th className="px-4 text-white py-2 border-r border-white">Designation</th>
+                  <th className="px-4 text-white py-2 border-r border-white">Department </th>
+                  <th className="px-4 text-white py-2 border-r border-white">
                     Contact Details
                   </th>
                 </tr>
@@ -159,6 +160,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      </div>
+
     </PageLayout>
   );
 }

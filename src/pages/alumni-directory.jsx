@@ -59,11 +59,10 @@ export default function Home() {
   }
 
   return (
-    <PageLayout>
+    <PageLayout lable={"Alumni Directory"}>
       <div className="flex justify-center w-screen px-10 pt-4 ">
         <SearchBar onChange={onChange} />
       </div>
-      <h2 className="text-center text-2xl px-10 py-2 font-bold text-secondary">Alumni Directory</h2>
       <div className=" m-5 flex gap-5 flex-wrap justify-center   md:flex-row  ">
         {loading && <div>loading...</div>}
         {!loading &&
