@@ -28,7 +28,7 @@ export default function Home() {
         <div>
           <img
             className="bg"
-            src="../assests/backgroundImages/background1.png"
+            src="https://lh3.googleusercontent.com/p/AF1QipPWem0_IhZawD6divI0VshHXBYlVzBnibB6FIc=s1360-w1360-h1020"
             alt=""
           />
         </div>
@@ -36,14 +36,14 @@ export default function Home() {
         <div>
           <img
             className="bg"
-            src="../assests/backgroundImages/background2.jpg"
+            src="https://www.skit.org.in/assets/images/gallery/volley_ball/1.jpg"
             alt=""
           />
         </div>
         <div>
           <img
             className="bg"
-            src="../assests/backgroundImages/background3.jpg"
+            src="https://www.skit.org.in/assets/images/gallery/campus/1h.jpg"
             alt=""
           />
         </div>
@@ -89,8 +89,8 @@ To provide career development guidance."
         <h5 className="text-3xl font-semibold">Gallery</h5>
       </div>
       <div className=" gallary flex gap-2  ">
-        <GalleryImage src="./assests/gallary/pic1.jpg" alt="gallery-pic" />
-        <GalleryImage src="./assests/gallary/pic2.jpg" alt="gallery-pic" />
+        <GalleryImage src="./assests/gallary/img1.jpg" alt="gallery-pic" />
+        <GalleryImage src="./assests/gallary/img2.jpg" alt="gallery-pic" />
         <GalleryImage src="./assests/gallary/pic3.jpg" alt="gallery-pic" />
         <GalleryImage src="./assests/gallary/pic4.jpg" alt="gallery-pic" />
       </div>
