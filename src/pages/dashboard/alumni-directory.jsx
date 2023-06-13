@@ -92,14 +92,14 @@ const AlumniProfile = ({ name, usn, passingYear, isApproved, editAlumni }) => {
         {/* <img className="w-20 h-20 mx-auto" src={profile} alt="profilePic" /> */}
       </div>
       <div className="flex flex-col gap-2 text-center">
-        <div className="flex gap-2">
-          <h4 className="">{name}</h4>
+        <div className="flex gap-2 w-full">
+          <h4 className="w-max">{name}</h4>
           {isApproved && (
             <div
               className="bg-green-600 text-white flex items-center justify-center h-6 w-6 rounded-full hover:bg-green-800"
               type=""
             >
-              <BiCheck />
+              <BiCheck className="w-full h-full" />
             </div>
           )}
         </div>
