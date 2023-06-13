@@ -4,6 +4,7 @@ import EventFormDash from "../../components/EventForm";
 import CREATE_EVENT from "@/graphql/mutation/CREATE_EVENT";
 import { FETCH_EVENTS } from "../../graphql/query/FETCH_EVENTS";
 import EDIT_EVENT from "@/graphql/mutation/EDIT_EVENT";
+import DELETE_EVENT from "@/graphql/mutation/DELETE_EVENT";
 import { useNotification } from "@/customHooks/useNotification";
 import moment from "moment";
 import { client } from "@/graphql/client";
@@ -123,6 +124,25 @@ export default function Home() {
     }
   };
 
+  const onDelete = async (id) => {
+    try {
+      console.log(id);
+      const response = await client.mutate({
+        mutation: DELETE_EVENT,
+        variables: {
+          deleteEventId: id,
+        },
+      });
+      if (response.data.deleteEvent.success) {
+        setNotification(uuid(), "Event Deleted Succensfully", "Success", 3000);
+        getEvents();
+      }
+    } catch (error) {
+      setNotification(uuid(), "Something went wrong", "Error", 3000);
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getEvents();
   }, []);
@@ -150,6 +170,7 @@ export default function Home() {
             date={moment(item.date).format("Do MMMM YYYY")}
             time={moment(item.date).format(" h:mm A")}
             location={item.location}
+            onDelete={() => onDelete(item._id)}
             onClick={() => {
               window.scrollTo({
                 top: 0,
@@ -178,20 +199,36 @@ export default function Home() {
   );
 }
 
-const UpcomingEvents = ({ eventName, date, location, time, onClick }) => {
+const UpcomingEvents = ({
+  eventName,
+  date,
+  location,
+  time,
+  onClick,
+  onDelete,
+}) => {
   return (
     <div className=" border  p-2  bg-white rounded-lg shadow-lg  w-[250px] h-[200px] text-center ">
       <h3 className="text-lg font-bold mb-2">{eventName}</h3>
       <p className="text-gray-500 mb-2">Date:{date}</p>
       <p className="text-gray-500 mb-2">Location:{location}</p>
       <p className="text-gray-500 mb-2">Time:{time} onward</p>
-      <button
-        className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-800"
-        type=""
-        onClick={onClick}
-      >
-        Edit Event
-      </button>
+      <div className="flex gap-2 justify-between w-full">
+        <button
+          className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-800"
+          type=""
+          onClick={onClick}
+        >
+          Edit Event
+        </button>
+        <button
+          className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-800"
+          type=""
+          onClick={onDelete}
+        >
+          Delete Event
+        </button>
+      </div>
     </div>
   );
 };
