@@ -42,6 +42,9 @@ const Login = () => {
       if (!data?.login?.success) {
         setNotification(uuid(), data.login.message, "Error", 3000);
       }
+      onError : ()=>{
+        setNotification(uuid(), "Something went wrong", "Error", 3000);
+      }
     },
 
     onError: (error) => {

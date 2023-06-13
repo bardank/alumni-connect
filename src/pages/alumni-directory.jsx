@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React , { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
@@ -7,29 +7,61 @@ import { FETCH_ALUMNIS } from "../graphql/query/FETCH_ALUMNIS";
 import PageLayout from "../layout/PageLayout";
 import Pagination from "../components/Pagination/Pagination";
 import SearchBar from "../components/UI/SearchBar";
+import { on } from "events";
 
 export default function Home() {
   const [alumniList, setAlumniList] = useState([]);
   const [queryData, setQUeryData] = useState({
-    count: 10,
+    count: 15,
     pageNo: 1,
   });
 
-  const { loading, error, data } = useQuery(FETCH_ALUMNIS, {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const { loading, error, data, refetch } = useQuery(FETCH_ALUMNIS, {
     variables: { fetchAlumnis: queryData },
     onCompleted: (data) => {
       setAlumniList(data.fetchAlumnis.data);
     },
   });
 
+  useEffect(() => {
+    if(searchQuery){
+      refetch({ fetchAlumnis: {
+        search : searchQuery,
+        pageNo : queryData.pageNo,
+        count : queryData.count
+      } });
+    }
+    else{
+      refetch({ fetchAlumnis: {
+        pageNo : queryData.pageNo,
+        count : queryData.count
+      } });
+    }
+
+    return () => {
+      
+    }
+  }, [searchQuery])
+  
+
+  const onSearch = (searchQuery) => {
+    setQUeryData({ ...queryData, searchQuery });
+  }
+
   const onPageChange = (pageNo) => {
     setQUeryData({ ...queryData, pageNo });
   };
 
+  const onChange = (e) => {
+    setSearchQuery(e.target.value);
+  }
+
   return (
     <PageLayout>
       <div className="flex justify-center w-screen px-10 pt-4 ">
-        <SearchBar />
+        <SearchBar onChange={onChange} />
       </div>
       <h2 className="text-center text-2xl px-10 py-2 font-bold text-blue-500">Alumni Directory</h2>
       <div className=" m-5 flex gap-5 flex-wrap justify-center   md:flex-row  ">
