@@ -28,7 +28,7 @@ export default function Home() {
         <div>
           <img
             className="bg"
-            src="https://lh3.googleusercontent.com/p/AF1QipPWem0_IhZawD6divI0VshHXBYlVzBnibB6FIc=s1360-w1360-h1020"
+            src="https://www.skit.org.in/assets/images/gallery/campus/1.jpg"
             alt=""
           />
         </div>

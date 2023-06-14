@@ -10,9 +10,9 @@ const Navbar = () => {
       <div className="flex justify-between p-5 w-full">
         <div className=" ">
           <img
-            src="./assests/logo.png"
+            src="./assests/logo_header.png"
             alt="Image 1"
-            className="object-cover"
+            className="object-cover h-12 md:h-24"
           />
         </div>
         <div className="hidden md:flex items-center justify-around gap-4 ">

@@ -4,14 +4,12 @@ import Button from "../components/UI/Button";
 import TextArea from "../components/UI/TextArea";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import PageLayout from "@/layout/PageLayout";
 
 export default function contactus() {
   return (
-    <div>
-      <Navbar />
-      <div></div>
-      <div className="m-10 p-5 border flex flex-col gap-10  bg-white rounded-lg shadow-lg w-10/12  ">
-        <h1 className="text-2xl font-semibold ">Contact Us</h1>
+    <PageLayout lable={"Connect Us"}>
+      <div className="mx-auto p-5 border flex flex-col gap-10  bg-white rounded-lg shadow-lg w-10/12  ">
         <div
           className="firstSection flex justify-between flex-wrap gap-10
         "
@@ -86,7 +84,6 @@ export default function contactus() {
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }
