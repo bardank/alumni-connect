@@ -9,7 +9,7 @@ const SearchBar = ({ onChange, value }) => {
           <input
             className="px-2 py-1 w-full bg-gray-100 text-gray-800 placeholder-gray-500 rounded-md outline-none focus:ring-none"
             name="text"
-            placeholder="Search by Email or Name..."
+            placeholder="Search by Name, USN or Email"
             type="search"
             value={value}
             onChange={onChange}

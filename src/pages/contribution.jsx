@@ -2,6 +2,8 @@
 import React, { Fragment } from "react";
 
 import PageLayout from "../layout/PageLayout";
+import Carousel from "../components/Carousel";
+import BankDetail from "../components/BankDetail";
 
 const Donation = () => {
   return (
@@ -55,7 +57,7 @@ const Donation = () => {
           </ul>
         </div>
 
-        <div className="right w-1/2 h-auto  mx-auto pt-8">
+        {/* <div className="right w-1/2 h-auto  mx-auto pt-8">
           <h1 className=" font-bold  text-2xl text-center">Bank Details</h1>
           <table className="account-table">
             <tbody>
@@ -85,15 +87,9 @@ const Donation = () => {
               </tr>
             </tbody>
           </table>
-          {/* <div className="qr-code   ">
-            <img
-              className="w-40 h-40"
-              src="./assests/icons/qrcode.png"
-              alt=""
-            />
-            <p>Scan Qr code to contribute </p>
-          </div> */}
-        </div>
+        </div> */}
+        <BankDetail />
+        <Carousel />
       </div>
     </PageLayout>
   );

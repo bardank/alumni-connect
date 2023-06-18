@@ -5,6 +5,7 @@ import TextArea from "../components/UI/TextArea";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import PageLayout from "@/layout/PageLayout";
+import ContactUsForm from "../components/ContactUsForm";
 
 export default function contactus() {
   return (
@@ -63,7 +64,7 @@ export default function contactus() {
             />
             <p className="font-medium">Email</p>
             <p>
-              <a href="mailto:principal@skit.org.in">principal@skit.org.in</a>
+              <a href="mailto:alumni@skit.org.in">alumni@skit.org.in</a>
             </p>
             <p>
               <a href="mailto:info@skit.org.in">info@skit.org.in</a>
@@ -84,6 +85,7 @@ export default function contactus() {
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+      <ContactUsForm />
     </PageLayout>
   );
 }

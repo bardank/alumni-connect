@@ -9,36 +9,45 @@ export default function Home() {
       lable={"The SKIT Alumni Association (SKITAA)"}
     >
       <div className="w-[80%] flex flex-col  items-center ">
-        <div className=" flex flex-row flex-wrap gap-2 justify-center px-6 pt-0">
-          <div className="border  p-4  bg-white rounded-lg   h-auto text-center   ">
-            <p>
-              The SKIT Alumni Association (SKITAA) was formally established in
-              the year 2016, owing to the painstaking efforts and initiative of
-              our beloved Principal Dr. Mahesha K. A seed committee was formed
-              where Prof. Sreenivasan A. became the first Secretary of SKITAA.
-              The committee held a membership drive and the first ever alumni
-              meet was organized in the year 2016.
-            </p>
+        <div className=" flex flex-col  md:flex-row  gap-4 justify-center px-6 pt-0">
+          <div className=" md:pr-4">
+            <img
+              src="./assests/Alumni_logo.jpg"
+              alt="Image 3"
+              className="w-[400px]  h-[400px] md:h-[200px] object-cover m-2"
+            />
           </div>
-          <div className="border  p-4  bg-white rounded-lg    h-auto text-center   ">
-            <p className=" flex">
-              SKITAA is conducting various activities for the Alumni. The SKITAA
-              is proud to say that its alumni are well settled throughout the
-              globe and are helping the current students by upgrading the
-              library, sponsoring prizes for top rank holders and sharing their
-              experiences in seminars and conferences.
-            </p>
-          </div>
-          <div className="border  p-4  bg-white rounded-lg    h-auto text-center">
-            <p>
-              Alumni of SKIT in particular have excelled and acquired positions
-              of eminence in every field imaginable-from engineering to
-              management to finance, Renowned scientists, successful
-              entrepreneurs and managers and leaders of society. .
-            </p>
+          <div className=" p-4 md:px-10 rounded-md">
+            <div className="  bg-white rounded-lg font-normal   h-auto text-center   ">
+              <p>
+                The SKIT Alumni Association (SKITAA) was formally established in
+                the year 2016, owing to the painstaking efforts and initiative
+                of our beloved Principal Dr. Mahesha K. A seed committee was
+                formed where Prof. Sreenivasan A. became the first Secretary of
+                SKITAA. The committee held a membership drive and the first ever
+                alumni meet was organized in the year 2016.
+              </p>
+            </div>
+            <div className="  bg-white rounded-lg    h-auto text-center   ">
+              <p className=" flex">
+                SKITAA is conducting various activities for the Alumni. The
+                SKITAA is proud to say that its alumni are well settled
+                throughout the globe and are helping the current students by
+                upgrading the library, sponsoring prizes for top rank holders
+                and sharing their experiences in seminars and conferences.
+              </p>
+            </div>
+            <div className="  bg-white rounded-lg    h-auto text-center">
+              <p>
+                Alumni of SKIT in particular have excelled and acquired
+                positions of eminence in every field imaginable-from engineering
+                to management to finance, Renowned scientists, successful
+                entrepreneurs and managers and leaders of society. .
+              </p>
+            </div>
           </div>
         </div>
-        <div className="container p-6 ">
+        <div className="container p-6 pt-8">
           <h1 className="font-semibold text-xl pb-4">
             The main objectives of SKITAA are:
           </h1>
@@ -73,7 +82,7 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="px-6 ">
+        <div className="px-6 pt-8 ">
           <div>
             <h3 className="text-black  text-xl font-bold p-1">
               Alumni Association Committee

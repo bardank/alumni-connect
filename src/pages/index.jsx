@@ -3,9 +3,10 @@ import Navbar from "../components/Navbar/Navbar";
 import Button from "../components/UI/Button";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
 import { useRouter } from "next/router";
 import TextAnimation from "../components/TextAnimation";
+import TestimonialSlider from "../components/TestimonialSlider";
+
 export default function Home() {
   const router = useRouter();
 
@@ -26,24 +27,19 @@ export default function Home() {
         showIndicators={true}
       >
         <div>
-          <img
-            className="bg"
-            src="https://www.skit.org.in/assets/images/gallery/campus/1.jpg"
-            alt=""
-          />
+          <img className="bg" src="./assests/group_pic.jpg" alt="" />
         </div>
-
         <div>
           <img
-            className="bg"
-            src="https://www.skit.org.in/assets/images/gallery/volley_ball/1.jpg"
+            className="bg object-cover"
+            src="./assests/principal.jpg"
             alt=""
           />
         </div>
         <div>
           <img
-            className="bg"
-            src="https://www.skit.org.in/assets/images/gallery/campus/1h.jpg"
+            className="bg object-cover"
+            src="./assests/rakshita.jpg"
             alt=""
           />
         </div>
@@ -94,7 +90,7 @@ To provide career development guidance."
         <GalleryImage src="./assests/gallary/pic3.jpg" alt="gallery-pic" />
         <GalleryImage src="./assests/gallary/pic4.jpg" alt="gallery-pic" />
       </div>
-      <div className="text-center ">
+      <div className="text-center pt-4">
         <a href="https://www.skit.org.in/gallery.html#" target="_blank">
           <h3 className="text-secondary text-3xl font-semibold">
             Explore More
@@ -106,6 +102,7 @@ To provide career development guidance."
           </h3>
         </a>
       </div>
+
       <div className="flex justify-center items-center px-10 pt-10 pb-6 h-full text-black">
         <h5 className="text-3xl font-semibold text-center">
           Join the Alumni Association: Register Today!
@@ -119,9 +116,10 @@ To provide career development guidance."
             including networking opportunities, career resources, and exclusive
             events.
           </p>
-          <Button onClick={onRegisterClick} label="Register now" />
+          {/* <Button onClick={onRe/gisterClick} label="Register now" /> */}
         </div>
       </div>
+      <TestimonialSlider />
       <Footer />
     </div>
   );
@@ -129,12 +127,12 @@ To provide career development guidance."
 
 const PurposeCard = ({ text, icon, heading }) => {
   return (
-    <div className="border-primary border-2 hover:border-blue-500 bg-white p-4 rounded-xl">
+    <div className="border-gray-200 border-2 shadow-md hover:shadow-2xl bg-white p-4 rounded-xl">
       <div className="text-center mb-2">
         <img src={icon} alt="Icon" className="w-8 h-8 mx-auto" />
-        <h1 className="font-medium text-3xl">{heading}</h1>
+        <h1 className="font-medium text-3xl py-4">{heading}</h1>
       </div>
-      {text}
+      <p className="tex-sm pt-2 pb-4">{text}</p>
     </div>
   );
 };
