@@ -27,7 +27,7 @@ const AdminLayout = ({ children }) => {
                 title="Upcoming Events"
                 link="/dashboard/upcoming-events"
               />
-              {/* <SidebarItem title="Opportunity" link="/dashboard/opportunity" /> */}
+              <SidebarItem title="Opportunity" link="/dashboard/opportunity" />
               <li
                 className={`py-3 w-full flex items-center text-white hover:bg-green-500 `}
               >

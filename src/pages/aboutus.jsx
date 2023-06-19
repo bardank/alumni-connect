@@ -1,11 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
 import PageLayout from "@/layout/PageLayout";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+
 export default function Home() {
   return (
     <PageLayout
-      className={"flex flex-col  items-center"}
+      className={"flex flex-col  items-center !min-h-screen"}
       lable={"The SKIT Alumni Association (SKITAA)"}
     >
       <div className="w-[80%] flex flex-col  items-center ">

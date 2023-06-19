@@ -144,7 +144,7 @@ const GalleryImage = ({ src, alt }) => {
         className="gallaryPic"
         src={src}
         alt={alt}
-        className="w-150 h-150 object-cover"
+        // className="w-150 h-150 object-cover"
       />
     </div>
   );
