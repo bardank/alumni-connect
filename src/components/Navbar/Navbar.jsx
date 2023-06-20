@@ -10,12 +10,17 @@ const Navbar = () => {
       <div className="flex justify-between p-5 w-full">
         <div className=" ">
           <img
-            src="./assests/logo.png"
+            src="./assests/logo_header.png"
             alt="Image 1"
-            className="object-cover"
+            className="object-cover h-12 md:h-24"
           />
         </div>
         <div className="hidden md:flex items-center justify-around gap-4 ">
+          <img
+            src="./assests/Alumni_logo.jpg"
+            alt="Image 3"
+            className="w-[100px] h-[100px] object-cover m-2"
+          />
           <img
             src="./assests/vtulogo.png"
             alt="Image 3"
@@ -45,10 +50,10 @@ const Navbar = () => {
           <NavbarItem link="/contactus" title={"Contact Us"} />
         </ul>
         <div
-          className="md:hidden text-center flex items-center float-right pr-4"
+          className="md:hidden text-center flex items-center float-right md:pr-4"
           onClick={() => setNav(!nav)}
         >
-          <p className="bg-green-600 p-1.5 text-white rounded-lg cursor-pointer hover:bg-green-700 px-6">
+          <p className="bg-green-600 p-4 text-white  cursor-pointer hover:bg-green-700 px-6">
             {nav ? <AiOutlineClose /> : <AiOutlineMenu />}
           </p>
         </div>
@@ -98,7 +103,7 @@ export const NavbarItem = ({ title, link }) => {
   return (
     <a
       href={link}
-      className={`cursor-pointer text-center py-2 px-6 md:px-4 w-full lg:px-6 items-center hover:bg-green-300 h-full hover:text-customGray-dark flex justify-center ${
+      className={`cursor-pointer text-center py-2 px-6 md:px-4 w-full lg:px-6 items-center hover:bg-green-300 h-full hover:text-customGray-dark  font-semibold text-xl flex justify-center ${
         isActive ? "bg-green-400 text-customGray-dark" : ""
       }`}
     >

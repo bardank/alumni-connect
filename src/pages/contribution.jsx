@@ -2,16 +2,15 @@
 import React, { Fragment } from "react";
 
 import PageLayout from "../layout/PageLayout";
+import Carousel from "../components/Carousel";
+import BankDetail from "../components/BankDetail";
 
 const Donation = () => {
   return (
-    <PageLayout>
-      <h1 className="text-center text-3xl m-10 px-10 py-2 font-bold text-blue-500">
-        Ways to Contribute
-      </h1>
+    <PageLayout lable={"Ways to Contribute"}>
       <div className="containerContribution  flex flex-col  justify-center  md:px-20 px-6">
         <div className="left  w-full h-auto  ">
-          <h2 className="font-bold text-2xl underline pb-3">
+          <h2 className="font-bold text-2xl  pb-3">
             As an alumnus/alumna, there are several ways you can contribute to
             your college and make a positive impact:
           </h2>
@@ -58,8 +57,8 @@ const Donation = () => {
           </ul>
         </div>
 
-        <div className="right w-1/2 h-auto m-5  ">
-          <h1 className="underline font-bold  text-2xl ">Bank Details</h1>
+        {/* <div className="right w-1/2 h-auto  mx-auto pt-8">
+          <h1 className=" font-bold  text-2xl text-center">Bank Details</h1>
           <table className="account-table">
             <tbody>
               <tr className="border-2 border-black">
@@ -88,15 +87,9 @@ const Donation = () => {
               </tr>
             </tbody>
           </table>
-          {/* <div className="qr-code   ">
-            <img
-              className="w-40 h-40"
-              src="./assests/icons/qrcode.png"
-              alt=""
-            />
-            <p>Scan Qr code to contribute </p>
-          </div> */}
-        </div>
+        </div> */}
+        <BankDetail />
+        <Carousel />
       </div>
     </PageLayout>
   );

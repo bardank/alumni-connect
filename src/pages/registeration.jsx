@@ -162,11 +162,12 @@ export default function Home() {
                     onChange={onChange}
                   />
                   <Input
-                    label="Current Address"
+                    // label="Current Address"
+                    label="Residence City"
                     type="text"
                     id="currentAddress"
                     name="currentAddress"
-                    placeholder="currentAddress "
+                    placeholder="Residence City "
                     value={inputData.currentAddress}
                     onChange={onChange}
                   />
