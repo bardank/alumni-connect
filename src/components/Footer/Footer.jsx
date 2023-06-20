@@ -32,13 +32,8 @@ const Footer = () => {
             &copy; Copyright 2023 · All rights reserved.
           </p>
         </div>
-<<<<<<< HEAD
-        <div className="bg-black text-white w-full text-center py-4 ">
-          Created by CSE Department
-=======
         <div className="bg-gray-800 text-center">
             <p className="text-center text-white py-2 ">Created by CSE Departement</p>
->>>>>>> dev
         </div>
       </footer>
     </div>

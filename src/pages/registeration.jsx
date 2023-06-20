@@ -43,8 +43,6 @@ export default function Home() {
     },
   });
 
-  const { setNotification } = useNotification();
-
   const onChange = (e) => {
     setInputVariable((prevs) => ({
       ...inputData,
