@@ -6,11 +6,10 @@ import Input from "../components/UI/Input";
 import TextArea from "../components/UI/TextArea";
 import Button from "../components/UI/Button";
 import { useMutation } from "@apollo/client";
-import { useNotification } from "../customHooks/useNotification";
-import { uuid } from "uuidv4";
 import CREATE_ALUMNI from "../graphql/mutation/CREATE_ALUMNI.JSX";
 import { useNotification } from "../customHooks/useNotification";
 import { uuid } from "uuidv4";
+
 export default function Home() {
   const { setNotification } = useNotification();
   const [inputData, setInputVariable] = useState({

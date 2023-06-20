@@ -69,6 +69,7 @@ export default function Home() {
           alumniList.map((alumni) => {
             return (
               <AlumniProfile
+                key={alumni._id}
                 profile="/assests/Profile/profile.png"
                 alumni={alumni}
               />

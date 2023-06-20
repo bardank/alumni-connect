@@ -1,4 +1,9 @@
 import React from "react";
+import FormHeading from "../UI/FormHeading";
+import Input from "./Input";
+import Select from "./Select";
+import TextArea from "./TextArea";
+import Button from "./Button";
 
 const AlumniForm = () => {
   return (

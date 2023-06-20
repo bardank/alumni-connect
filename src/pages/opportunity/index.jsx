@@ -12,7 +12,7 @@ import { useModal } from "@/customHooks/useModal";
 import ConfirmationModal from "@/modals/confirmationModal";
 
 
-export default function opportunity() {
+export default function Opportunity() {
    const [queryData, setQUeryData] = useState({
     count: 10,
     pageNo: 1,
@@ -52,7 +52,7 @@ export default function opportunity() {
         {loading && <div>loading...</div>}
         {
           opportunities.map((opportunity) => (
-            <JobPostingCard
+            <JobPostingCard key={opportunity._id}
               jobRole={opportunity.title}
               companyName={opportunity.companyName}
               location={opportunity.location}
@@ -80,3 +80,5 @@ export default function opportunity() {
     </PageLayout>
   );
 }
+
+
