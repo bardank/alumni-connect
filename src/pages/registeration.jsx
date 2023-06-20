@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
-
 import Select from "../components/UI/Select";
 import Input from "../components/UI/Input";
 import TextArea from "../components/UI/TextArea";
 import Button from "../components/UI/Button";
 import { useMutation } from "@apollo/client";
+import { useNotification } from "../customHooks/useNotification";
+import { uuid } from "uuidv4";
 import CREATE_ALUMNI from "../graphql/mutation/CREATE_ALUMNI.JSX";
 import { useNotification } from "../customHooks/useNotification";
 import { uuid } from "uuidv4";
 export default function Home() {
+  const { setNotification } = useNotification();
   const [inputData, setInputVariable] = useState({
     firstName: "",
     middleName: "",
@@ -32,13 +34,12 @@ export default function Home() {
   const [createAlumni, { loading, error, data }] = useMutation(CREATE_ALUMNI, {
     variables: {},
     onCompleted: (data) => {
-      resetForm();
-      setNotification(
-        uuid(),
-        "Alumni registered successfully",
-        "Success",
-        3000
-      );
+      if (data.createAlumni.success) {
+        setNotification(uuid(), "Registration Successfull", "Success", 3000);
+        resetForm();
+      } else {
+        setNotification(uuid(), "Something went Wrong", "Error", 3000);
+      }
     },
   });
 
@@ -89,6 +90,7 @@ export default function Home() {
           usn: inputData.usn,
           yearOfCompletion: parseInt(inputData.graduationYear),
           linkedIn: "",
+          isApproved: false,
           branch: inputData.branch,
           isPlacementProvidedBySkit: inputData.isPlacementProvidedBySkit,
         },
@@ -104,8 +106,8 @@ export default function Home() {
           <h4 className="text-center font-semibold text-2xl pt-6 ">
             Register As Alumni
           </h4>
-          <form className=" " onSubmit={(e) => handleRegisteration(e)}>
-            <div className="  ">
+          <form className="pb-4 " onSubmit={(e) => handleRegisteration(e)}>
+            <div className=" pb-4 ">
               <div className=" ">
                 <FormHeading title="Personal Details" />
                 <div className="grid grid-cols-4 gap-4">
@@ -164,11 +166,12 @@ export default function Home() {
                     onChange={onChange}
                   />
                   <Input
-                    label="Current Address"
+                    // label="Current Address"
+                    label="Residence City"
                     type="text"
                     id="currentAddress"
                     name="currentAddress"
-                    placeholder="currentAddress "
+                    placeholder="Residence City "
                     value={inputData.currentAddress}
                     onChange={onChange}
                   />

@@ -5,7 +5,7 @@ const Button = ({ type, label, className, onClick }) => {
     <div>
       <button
         onClick={onClick}
-        className={`bg-blue-500  hover:bg-blue-700 text-white font-bold px-4 w-full py-4 rounded-3xl ${className}`}
+        className={`bg-secondary  hover:bg-blue-700 text-white font-bold px-4 w-full py-4 rounded-3xl ${className}`}
       >
         <a>{label}</a>
       </button>

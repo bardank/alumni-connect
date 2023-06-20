@@ -1,19 +1,24 @@
 import React from "react";
 import Auth from "../outlet/Auth";
+import { useRouter } from "next/router";
+import { useAuth } from "../customHooks/useAuth";
+import { useNotification } from "@/customHooks/useNotification";
+import { uuid } from "uuidv4";
 
 const AdminLayout = ({ children }) => {
+  const { removeUser, user } = useAuth();
+  const { setNotification } = useNotification();
   return (
     <Auth>
-      <div className="admin">
+      <div className="admin ">
         <div className="sidebar">
           <div className="h-max w-full">
-            <h4 className="text-center text-xl font-bold p-4 text-white bg-black rounded-md">
+            <h4 className="text-center text-xl font-bold p-4 text-white rounded-md">
               Alumni Connect SKIT
             </h4>
           </div>
-          <div className="h-max w-full">
+          <div className=" w-full">
             <ul className="flex flex-col gap-3">
-              <SidebarItem title="Dashboard" link="/dashboard" />
               <SidebarItem
                 title="Alumni-Directory"
                 link="/dashboard/alumni-directory"
@@ -23,10 +28,28 @@ const AdminLayout = ({ children }) => {
                 link="/dashboard/upcoming-events"
               />
               <SidebarItem title="Opportunity" link="/dashboard/opportunity" />
+              <li
+                className={`py-3 w-full flex items-center text-white hover:bg-green-500 `}
+              >
+                <button
+                  className=" cursor-pointer px-6 text-center w-full"
+                  onClick={() => {
+                    removeUser();
+                    setNotification(
+                      uuid(),
+                      "Logged out successfully",
+                      "Success",
+                      3000
+                    );
+                  }}
+                >
+                  Logout
+                </button>
+              </li>
             </ul>
           </div>
         </div>
-        <div className="main">{children}</div>
+        <div className="main relative">{children}</div>
       </div>
     </Auth>
   );
@@ -35,9 +58,15 @@ const AdminLayout = ({ children }) => {
 export default AdminLayout;
 
 export const SidebarItem = ({ title, link }) => {
+  const router = useRouter();
+  const isActive = router.pathname === link;
   return (
-    <li className="py-3 px-4 w-full rounded-md bg-red-600 text-white hover:text-customGray-dark">
-      <a href={link} className=" cursor-pointer py-3 px-4 ">
+    <li
+      className={`py-3 w-full flex items-center text-white hover:bg-green-500 ${
+        isActive ? "bg-green-800" : ""
+      }`}
+    >
+      <a href={link} className=" cursor-pointer px-6 text-center w-full">
         {title}
       </a>
     </li>

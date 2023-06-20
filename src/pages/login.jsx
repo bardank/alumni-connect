@@ -19,6 +19,7 @@ const Login = () => {
   });
 
   const { setUser } = useAuth();
+  const { user } = useAuth((state) => state);
   const { setNotification } = useNotification((state) => state);
   const handleInputChange = (e) => {
     setInputVariables((prevs) => ({
@@ -34,11 +35,15 @@ const Login = () => {
         const user = data.login["user"];
         // console.log({ user });
         setUser(user.accessToken, user._id, user.email, user.fullName);
+
         setNotification(uuid(), "Login Successfull", "Success", 3000);
-        router.push("/dashboard");
+        router.push("/dashboard/alumni-directory");
       }
       if (!data?.login?.success) {
         setNotification(uuid(), data.login.message, "Error", 3000);
+      }
+      onError : ()=>{
+        setNotification(uuid(), "Something went wrong", "Error", 3000);
       }
     },
 
@@ -62,7 +67,7 @@ const Login = () => {
   return (
     <div>
       <Navbar />
-
+      {console.log(user)}
       <div className="flex justify-center items-center h-screen">
         <div className="w-full max-w-md">
           <form
