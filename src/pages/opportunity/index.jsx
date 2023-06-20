@@ -8,6 +8,10 @@ import Pagination from "../../components/Pagination/Pagination";
 import Button from "../../components/UI/Button";
 import PageLayout from "../../layout/PageLayout";
 import {useRouter} from "next/router";
+import { useModal } from "@/customHooks/useModal";
+import ConfirmationModal from "@/modals/confirmationModal";
+
+
 export default function opportunity() {
    const [queryData, setQUeryData] = useState({
     count: 10,
@@ -15,6 +19,9 @@ export default function opportunity() {
   });
 
   const router = useRouter();
+
+  const {openModal} = useModal();
+  
 
   const [opportunities, setOpportunities] = useState([]);
 
@@ -65,7 +72,7 @@ export default function opportunity() {
       )}
     <div className="flex justify-center">
         <Button label={"Create Opportunity"} className="w-auto" onClick={()=>{
-          router.push("/opportunity/create")
+          openModal(<ConfirmationModal/>)
         }}/>
          
       </div>

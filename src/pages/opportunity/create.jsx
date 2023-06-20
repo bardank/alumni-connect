@@ -5,13 +5,15 @@ import JobPostingCard from "../../components/UI/JobPostingCard";
 import FETCH_OPPORTUNITIES from "@/graphql/query/FETCH_OPPORTUNITIES";
 import {useQuery} from "@apollo/client";
 import Pagination from "../../components/Pagination/Pagination";
-
+import { useModal } from "@/customHooks/useModal";
 import PageLayout from "../../layout/PageLayout";
-export default function opportunity() {
+export default function CreateOpp() {
    const [queryData, setQUeryData] = useState({
     count: 10,
     pageNo: 1,
   });
+
+  const {showModal} = useModal();
 
   const [opportunities, setOpportunities] = useState([]);
 
