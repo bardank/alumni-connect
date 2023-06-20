@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
 import Select from "../../components/UI/Select";
 import Input from "../../components/UI/Input";
 import TextArea from "../../components/UI/TextArea";

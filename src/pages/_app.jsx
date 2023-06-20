@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { client } from "../graphql/client";
 import { ApolloProvider } from "@apollo/client";
 import PopUpNotification from "../components/UI/PopupNotification";
