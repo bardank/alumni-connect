@@ -56,6 +56,7 @@ export default function opportunity() {
               jobRole={opportunity.title}
               companyName={opportunity.companyName}
               location={opportunity.location}
+              description={opportunity.description}
             />
           ))
         }
