@@ -52,7 +52,7 @@ export default function App() {
         {testimonials.map((item, i) => (
           <SwiperSlide key={i}>
             <div className=" border  p-5  bg-white rounded-lg shadow-lg  flex flex-col md:flex-col justify-center gap-5 items-center">
-              <div className="  pt-20  ">
+              <div className="   ">
                 <img className="rounded-full" src={item.image} alt="" />
               </div>
               <div className="w-100 h-auto p-5  rounded-xl flex flex-col justify-center items-center ">

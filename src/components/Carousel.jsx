@@ -35,11 +35,7 @@ const contributions = [
     name: "Mr. Sreevathsa C V",
     text: "   Alumni Talk on Backend Technologies.",
   },
-  {
-    image: "./assests/Contribution/PavanKumarSharma.png",
-    name: "Mr. Pavan Kumar Sharma ",
-    text: "   Alumni Talk on 21st May 2022.",
-  },
+
   {
     image: "./assests/Contribution/Shravan.png",
     name: "Mr. Shravan Bhardwaj ",
