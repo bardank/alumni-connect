@@ -1,8 +1,8 @@
-import React, { Fragment, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { client } from "../graphql/client";
 import { ApolloProvider } from "@apollo/client";
 import PopUpNotification from "../components/UI/PopupNotification";
-import  ME  from "../graphql/query/ME";
+import ME from "../graphql/query/ME";
 import { useNotification } from "../customHooks/useNotification";
 import "../styles/globals.scss";
 import { useAuth } from "../customHooks/useAuth";
@@ -10,8 +10,9 @@ import { useAuth } from "../customHooks/useAuth";
 export default function App({ Component, pageProps }) {
   const notifications = useNotification((state) => state.notifications);
 
-   const {setUser,removeUser} = useAuth();
+  const { setUser, removeUser } = useAuth();
 
+  // load user function
 
   const loadUser = async () => {
     try {
@@ -20,9 +21,10 @@ export default function App({ Component, pageProps }) {
         const user = response.data.me.user;
         console.log(user);
         setUser(user.accessToken, user._id, user.email, user.fullName);
-        console.log(user,"user-set");
-      }else{
+        console.log(user, "user-set");
+      } else {
         // setAuthincatedUser();
+        console.log("user not found");
       }
     } catch (error) {
       console.log(error);
