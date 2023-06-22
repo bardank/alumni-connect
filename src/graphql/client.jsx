@@ -18,7 +18,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const httpLink = createUploadLink({
-  uri: "http://ec2-13-127-14-248.ap-south-1.compute.amazonaws.com/graphql",
+  uri: "https://api.motoghar.com/api",
 });
 
 export const client = new ApolloClient({
