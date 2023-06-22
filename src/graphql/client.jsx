@@ -18,7 +18,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const httpLink = createUploadLink({
-  uri: "https://api.motoghar.com/api",
+  uri: "http://13.127.14.248/graphql",
 });
 
 export const client = new ApolloClient({
