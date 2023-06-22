@@ -10,17 +10,17 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 SwiperCore.use([Pagination, Navigation]);
 const testimonials = [
   {
-    image: "./assests/Testimonial/Ashwitha.jfif",
+    image: "./assests/Testimonial/Ashwitha.jpg",
     name: "Ashwitha Shetty",
     text: "I am Ashwitha Shetty was  student of  Sri Krishna Institute of Technology 2015-2019 Information Science and Engineering Batch.My department encouraged me to explore my talent & potential by providing an exceptional integrated learning environment. I am really grateful to my professors  who have changed my whole aspect towards learning. I express my heartfelt thanks to the institution for giving me the perfect opportunity to explore myself.",
   },
   {
-    image: "./assests/Testimonial/Manoj.jfif",
+    image: "./assests/Testimonial/Manoj.jpg",
     name: "Manoj Pranesh",
     text: "I came to this institution with little to no background or aptitude to engineering discipline . From the day one , inspiring sessions taken by faculty members ignited the passion of learning and understanding concepts so dearly in me I thank the institute and the faculty for all the efforts put in by them, along with the perseverance and right moves have paid off finally. All my batch mates are doing well in their respective jobs which reflect the quality of the students the institute has produced",
   },
   {
-    image: "./assests/Testimonial/Spurthi.jfif",
+    image: "./assests/Testimonial/Spurthi.jpg",
     name: "Spurthi B",
     text: "Greetings everyone! As an alumna of Sri Krishna Institute of Technology's ECE Department, I am honored to share my transformative journey at this esteemed institution. SKIT empowered me with resilience, confidence, and the ability to conquer challenges.I express my heartfelt gratitude to my teachers, the Head of the ECE Department, and the Training and Placement Department for their unwavering support and guidance. Special thanks to Kennametal for providing invaluable global exposure and professional skills. SKIT will always hold a special place in my heart, filled with cherished memories. Thank you!",
   },
