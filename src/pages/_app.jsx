@@ -10,10 +10,9 @@ import { useAuth } from "../customHooks/useAuth";
 export default function App({ Component, pageProps }) {
   const notifications = useNotification((state) => state.notifications);
 
-  const { setUser, setAuthincatedUser } = useAuth(
-    (state) => state.setAuthincatedUser
-  );
-  const removeUser = useAuth((state) => state.removeUser);
+  const { setUser, removeUser } = useAuth();
+
+  // load user function
 
   const loadUser = async () => {
     try {
@@ -25,7 +24,8 @@ export default function App({ Component, pageProps }) {
         setUser(user.accessToken, user._id, user.email, user.fullName);
         console.log(user, "user-set");
       } else {
-        setAuthincatedUser();
+        // setAuthincatedUser();
+        console.log("user not found");
       }
     } catch (error) {
       console.log(error);

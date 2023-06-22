@@ -35,11 +35,7 @@ const contributions = [
     name: "Mr. Sreevathsa C V",
     text: "   Alumni Talk on Backend Technologies.",
   },
-  {
-    image: "./assests/Contribution/PavanKumarSharma.png",
-    name: "Mr. Pavan Kumar Sharma ",
-    text: "   Alumni Talk on 21st May 2022.",
-  },
+
   {
     image: "./assests/Contribution/Shravan.png",
     name: "Mr. Shravan Bhardwaj ",
@@ -74,13 +70,18 @@ export default function App() {
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper m-10   "
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+        }}
       >
         {contributions.map((item, i) => (
           <SwiperSlide key={i}>
-            <div className=" border  p-5  bg-white rounded-lg shadow-lg  flex flex-col md:flex-row justify-center gap-5 items-center">
+            <div className=" border  p-5  bg-white rounded-lg shadow-lg  flex flex-col md:flex-col justify-center gap-5 items-center">
               <div className="w-1/2 h-full bg-cover pt-20 flex justify-center items-center ">
-                <div className="w-[300px] h-[300px] m-5 ">
-                  <img className="" src={item.image} alt="" />
+                <div className=" ">
+                  <img className="rounded-full" src={item.image} alt="" />
                 </div>
               </div>
               <div className="w-100 h-auto p-5  rounded-xl flex flex-col justify-center items-center ">
