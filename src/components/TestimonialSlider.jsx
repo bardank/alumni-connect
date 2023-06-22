@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
-SwiperCore.use([Autoplay, Pagination, Navigation]);
+SwiperCore.use([Pagination, Navigation]);
 const testimonials = [
   {
     image: "./assests/Testimonial/Ashwitha.jfif",
@@ -32,7 +32,7 @@ export default function App() {
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
-        loop={true}
+        loop={false}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
@@ -53,7 +53,11 @@ export default function App() {
           <SwiperSlide key={i}>
             <div className=" border  p-5  bg-white rounded-lg shadow-lg  flex flex-col md:flex-col justify-center gap-5 items-center">
               <div className="   ">
-                <img className="rounded-full" src={item.image} alt="" />
+                <img
+                  className="rounded-full object-cover h-24 w-24"
+                  src={item.image}
+                  alt=""
+                />
               </div>
               <div className="w-100 h-auto p-5  rounded-xl flex flex-col justify-center items-center ">
                 <h4 className="text-lg font-bold mb-2">{item.name}</h4>

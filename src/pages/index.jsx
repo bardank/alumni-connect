@@ -17,52 +17,60 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <Carousel
-        infiniteLoop
-        autoPlay={true}
-        showStatus={false}
-        showArrows={true}
-        interval={5000}
-        showThumbs={false}
-        showIndicators={true}
-      >
-        <div>
-          <img className="bg" src="./assests/group_pic.jpg" alt="" />
-        </div>
-        <div>
-          <img
-            className="bg object-cover"
-            src="./assests/principal.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            className="bg object-cover"
-            src="./assests/rakshita.jpg"
-            alt=""
-          />
-        </div>
-        {/* <div>
+      <div className="relative">
+        <Carousel
+          infiniteLoop
+          autoPlay={false}
+          showStatus={false}
+          showArrows={true}
+          interval={5000}
+          showThumbs={false}
+          showIndicators={true}
+        >
+          <div>
+            <img className="bg" src="./assests/group_pic.jpg" alt="" />
+          </div>
+          <div>
+            <img
+              className="bg object-cover"
+              src="./assests/gallary/gallaryImage1.jpeg"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              className="bg object-cover"
+              src="./assests/principal.jpg"
+              alt=""
+            />
+          </div>
+
+          {/* <div>
           <img
             className="bg"
             src="../assests/backgroundImages/background3.jpg"
             alt=""
           />
         </div> */}
-      </Carousel>
-      <div className="flex flex-col h-full">
-        <div className="text-overlay text-2xl font-bold text-white ">
-          <TextAnimation />
-        </div>
-        <div className="button-overlay">
-          <button className="bg-secondary  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 m-10 rounded-3xl">
-            <a href="registeration" target="_blank">
-              Register now!
-            </a>
-          </button>
+        </Carousel>
+        <div className="absolute inset-0 h-full w-full">
+          <div className="flex flex-col justify-center items-center h-full w-full">
+            <div className="text-overlay text-2xl font-bold text-white ">
+              <h2 className="text-3xl text-center font-semibold">
+                Welcome to Alumni Website
+              </h2>
+            </div>
+            <div className="button-overlay pt-6">
+              <button className="bg-secondary  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 m-10 rounded-3xl">
+                <a href="registeration" target="_blank">
+                  Register now!
+                </a>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
       <div className="flex justify-center items-center pt-12 pb-8 px-8 text-black">
         <p className="text-3xl font-semibold">
           Our Purpose of Alumni Association
@@ -92,7 +100,10 @@ To provide career development guidance."
         <h5 className="text-3xl font-semibold">Gallery</h5>
       </div>
       <div className=" gallary flex gap-2  ">
-        <GalleryImage src="./assests/gallary/img1.jpg" alt="gallery-pic" />
+        <GalleryImage
+          src="./assests/gallary/gallaryImage1.jpeg"
+          alt="gallery-pic"
+        />
         <GalleryImage src="./assests/gallary/img2.jpg" alt="gallery-pic" />
         <GalleryImage src="./assests/gallary/pic3.jpg" alt="gallery-pic" />
         <GalleryImage src="./assests/gallary/pic4.jpg" alt="gallery-pic" />
@@ -139,7 +150,7 @@ const PurposeCard = ({ text, icon, heading }) => {
         <img src={icon} alt="Icon" className="w-8 h-8 mx-auto" />
         <h1 className="font-medium text-3xl py-4">{heading}</h1>
       </div>
-      <p className="tex-sm pt-2 pb-4">{text}</p>
+      <p className="tex-sm pt-2 pb-4 text-center">{text}</p>
     </div>
   );
 };
@@ -148,7 +159,7 @@ const GalleryImage = ({ src, alt }) => {
   return (
     <div>
       <img
-        className="gallaryPic"
+        className="w-[450px] h-full object-cover"
         src={src}
         alt={alt}
         // className="w-150 h-150 object-cover"
