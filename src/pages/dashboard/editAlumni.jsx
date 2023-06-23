@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import AdminLayout from "../../layout/AdminLayout";
-import { useRouter } from "next/navigation";
 import Select from "../../components/UI/Select";
 import Input from "../../components/UI/Input";
 import TextArea from "../../components/UI/TextArea";
 import Button from "../../components/UI/Button";
 import { useMutation } from "@apollo/client";
 import CREATE_ALUMNI from "../../graphql/mutation/CREATE_ALUMNI.JSX";
+import { useRouter } from "next/router";
+
 const EditAlumni = () => {
   const router = useRouter();
 
