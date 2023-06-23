@@ -28,12 +28,12 @@ export default function Home() {
           showIndicators={true}
         >
           <div>
-            <img className="bg" src="./assests/group_pic.jpg" alt="" />
+            <img className="bg" src="./assests/group.jpg" alt="" />
           </div>
           <div>
             <img
               className="bg object-cover"
-              src="./assests/gallary/gallaryImage1.jpeg"
+              src="./assests/gallary/gallaryImage3.jpeg"
               alt=""
             />
           </div>
@@ -101,7 +101,7 @@ To provide career development guidance."
       </div>
       <div className=" gallary flex gap-2  ">
         <GalleryImage
-          src="./assests/gallary/gallaryImage1.jpeg"
+          src="./assests/gallary/gallaryImage3.jpeg"
           alt="gallery-pic"
         />
         <GalleryImage src="./assests/gallary/img2.jpg" alt="gallery-pic" />
