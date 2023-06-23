@@ -10,16 +10,16 @@ export default function Home() {
     >
       <div className="w-[80%] flex flex-col  items-center ">
         <div className=" flex flex-col  md:flex-row  gap-4 justify-center px-6 pt-0">
-          <div className=" md:pr-4">
+          <div className=" flex justify-center md:pr-4">
             <img
               src="./assests/Alumni_logo.jpg"
               alt="Image 3"
               className="w-[400px]  h-[400px] md:h-[200px] object-contain m-2"
             />
           </div>
-          <div className=" p-4 md:px-10 rounded-md">
+          <div className=" p-4 md:px-10 rounded-md ">
             <div className="  bg-white rounded-lg font-normal   h-auto text-center   ">
-              <p>
+              <p className="text-center">
                 The SKIT Alumni Association (SKITAA) was formally established in
                 the year 2016, owing to the painstaking efforts and initiative
                 of our beloved Principal Dr. Mahesha K. A seed committee was
@@ -29,7 +29,7 @@ export default function Home() {
               </p>
             </div>
             <div className="  bg-white rounded-lg    h-auto text-center   ">
-              <p className=" flex">
+              <p className=" flex text-center">
                 SKITAA is conducting various activities for the Alumni. The
                 SKITAA is proud to say that its alumni are well settled
                 throughout the globe and are helping the current students by
@@ -38,17 +38,17 @@ export default function Home() {
               </p>
             </div>
             <div className="  bg-white rounded-lg    h-auto text-center">
-              <p>
+              <p className="text-center">
                 Alumni of SKIT in particular have excelled and acquired
                 positions of eminence in every field imaginable-from engineering
                 to management to finance, Renowned scientists, successful
-                entrepreneurs and managers and leaders of society. .
+                entrepreneurs and managers and leaders of society.
               </p>
             </div>
           </div>
         </div>
         <div className="container p-6 pt-8">
-          <h1 className="font-semibold text-xl pb-4">
+          <h1 className="font-semibold text-xl pb-4 text-secondary ">
             The main objectives of SKITAA are:
           </h1>
           <ul className="list-disc px-6">
