@@ -45,7 +45,7 @@ export default function Opportunity() {
     <PageLayout className={"pt-6"} lable="Opportunities">
       <div className="m-4 flex  flex-wrap gap-5 justify-center">
         {loading && <div>loading...</div>}
-        <div className="grid grid-cols-3">
+        <div className="grid grid-col-1 md:grid-cols-3">
           {opportunities.map((opportunity) => (
             <JobPostingCard
               key={opportunity._id}
