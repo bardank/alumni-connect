@@ -3,7 +3,6 @@ const Footer = () => {
   return (
     <div>
       <footer className=" ">
-
         <div className="bg-primary p-2 w-screen pt-6">
           <ul className="flex flex-row gap-8 justify-center pb-3 ">
             <SocialLink
@@ -33,7 +32,12 @@ const Footer = () => {
           </p>
         </div>
         <div className="bg-gray-800 text-center">
-            <p className="text-center text-white py-2 ">Created by CSE Departement</p>
+          <p className="text-center text-white py-2 ">
+            Designed by 6th sem SKIT students
+          </p>
+          <p className="text-center text-white py-2 ">
+            Maintained by Alumni Committe
+          </p>
         </div>
       </footer>
     </div>

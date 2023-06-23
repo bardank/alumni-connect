@@ -79,9 +79,13 @@ export default function App() {
         {contributions.map((item, i) => (
           <SwiperSlide key={i}>
             <div className=" border  p-5  bg-white rounded-lg shadow-lg  flex flex-col md:flex-col justify-center gap-5 items-center">
-              <div className="w-1/2 h-full bg-cover pt-20 flex justify-center items-center ">
+              <div className="w-1/2 h-full bg-cover pt-20 flex justify-center items-center">
                 <div className=" ">
-                  <img className="rounded-full" src={item.image} alt="" />
+                  <img
+                    className="rounded-full  object-cover h-28 w-28"
+                    src={item.image}
+                    alt=""
+                  />
                 </div>
               </div>
               <div className="w-100 h-auto p-5  rounded-xl flex flex-col justify-center items-center ">
