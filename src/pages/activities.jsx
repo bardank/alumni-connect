@@ -33,14 +33,14 @@ export default function Home() {
 
   return (
     <PageLayout className={"pt-6"} lable="Upcoming Events & Activities">
-      <div className="m-4 pt-8 flex flex-wrap gap-5 justify-center">
+      <div className="m-4  flex flex-wrap gap-5 justify-center">
         {loading && <div>loading...</div>}
         {events.map((item) => (
           <UpcomingEvents
             key={item._id}
             eventName={item.eventName}
             date={moment(item.date).format("Do MMMM YYYY")}
-            time={"9:30 pm"}
+            time={"9:30 AM"}
             // time={moment(item.date).format(" h:mm A")}
             location={item.location}
           />

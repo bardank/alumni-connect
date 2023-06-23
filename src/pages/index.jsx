@@ -11,7 +11,7 @@ export default function Home() {
   const router = useRouter();
 
   const onRegisterClick = () => {
-    router.push("/registeration");
+    router.push("/registration");
   };
 
   return (
@@ -62,7 +62,7 @@ export default function Home() {
             </div>
             <div className="button-overlay pt-6">
               <button className="bg-secondary bg-opacity-60 hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 m-10 rounded-3xl">
-                <a href="registeration" target="_blank">
+                <a href="registration" target="_blank">
                   Register now!
                 </a>
               </button>

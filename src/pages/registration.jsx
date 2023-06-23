@@ -12,7 +12,7 @@ import { uuid } from "uuidv4";
 import PageLoader from "next/dist/client/page-loader";
 import PageLayout from "@/layout/PageLayout";
 
-export default function Home() {
+function Registration() {
   const { setNotification } = useNotification();
   const [inputData, setInputVariable] = useState({
     fullName: "",
@@ -26,14 +26,14 @@ export default function Home() {
     offerLetter: "",
     suggestion: "",
     isPlacementProvidedBySkit: true,
-    branch: "",
+    branch: "CSE",
   });
 
   const [createAlumni, { loading, error, data }] = useMutation(CREATE_ALUMNI, {
     variables: {},
     onCompleted: (data) => {
       if (data.createAlumni.success) {
-        setNotification(uuid(), "Registration Successfull", "Success", 3000);
+        setNotification(uuid(), "Successfull Submitted", "Success", 5000);
         resetForm();
       } else {
         setNotification(uuid(), "Something went Wrong", "Error", 3000);
@@ -61,7 +61,7 @@ export default function Home() {
       offerLetter: "",
       suggestion: "",
       isPlacementProvidedBySkit: true,
-      branch: "",
+      branch: "CSE",
     });
   };
 
@@ -254,7 +254,7 @@ export default function Home() {
     </PageLayout>
   );
 }
-
+export default Registration;
 const FormHeading = ({ title }) => {
   return (
     <div>
