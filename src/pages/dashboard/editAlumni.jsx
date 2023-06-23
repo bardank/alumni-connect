@@ -6,10 +6,7 @@ import TextArea from "../../components/UI/TextArea";
 import Button from "../../components/UI/Button";
 import { useMutation } from "@apollo/client";
 import CREATE_ALUMNI from "../../graphql/mutation/CREATE_ALUMNI.JSX";
-<<<<<<< HEAD:src/pages/dashboard/editAlumni.js
-=======
 import { useRouter } from "next/router";
->>>>>>> dev:src/pages/dashboard/editAlumni.jsx
 
 const EditAlumni = () => {
   const router = useRouter();
