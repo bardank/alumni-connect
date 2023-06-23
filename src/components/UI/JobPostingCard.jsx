@@ -1,5 +1,5 @@
 import React from "react";
-
+import { IoLocation } from "react-icons/io5";
 export default function JobPostingCard({
   jobRole,
   companyName,
@@ -8,14 +8,27 @@ export default function JobPostingCard({
   onClick,
   onDelete,
   onEdit,
+  jobLink,
 }) {
   return (
-    <div className="flex items-center justify-center">
-      <div className=" border  p-3  bg-white rounded-lg shadow-lg flex flex-col justify-center items-center  w-full min-h-[280px]  m-4 ">
-        <h3 className="text-lg font-bold mb-2">{jobRole}</h3>
-        <p className="text-gray-500 mb-2">Company:{companyName}</p>
-        <p className="text-gray-500 mb-4">Location:{location}</p>
-        {description && <p className="text-gray-500 mb-4">{description}</p>}
+    <div className="flex items-center ">
+      <div className=" border  p-3  bg-white rounded-lg shadow-lg flex flex-col   w-full min-h-[280px]  m-4 ">
+        <h3 className="text-lg font-bold mb-2 text-center bg-secondary text-white w-full py-2">
+          {jobRole}
+        </h3>
+        <p className="text-gray-500 mb-2 text-center font-medium">
+          {companyName}
+        </p>
+        <div className="flex justify-center items-center mb-4">
+          <IoLocation className="text-secondary text-2xl" />
+          <p className="text-gray-500 ">{location}</p>
+        </div>
+        {description && (
+          <p className="text-gray-500 mb-4">Description : {description}</p>
+        )}
+        <a href={jobLink} className="text-secondary" target="_blank">
+          More info
+        </a>
         <div className="flex gap-2 justify-between w-full">
           {onClick && (
             <button

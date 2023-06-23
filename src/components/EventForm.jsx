@@ -25,7 +25,7 @@ const EventForm = ({
         />
         <Input
           label="Event Date"
-          type="datetime-local"
+          type="datetime"
           onChange={onChange}
           placeholder="Enter event date"
           name="eventDate"

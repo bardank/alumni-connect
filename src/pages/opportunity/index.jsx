@@ -45,15 +45,18 @@ export default function Opportunity() {
     <PageLayout className={"pt-6"} lable="Opportunities">
       <div className="m-4 flex  flex-wrap gap-5 justify-center">
         {loading && <div>loading...</div>}
-        {opportunities.map((opportunity) => (
-          <JobPostingCard
-            key={opportunity._id}
-            jobRole={opportunity.title}
-            companyName={opportunity.companyName}
-            location={opportunity.location}
-            description={opportunity.description}
-          />
-        ))}
+        <div className="grid grid-cols-3">
+          {opportunities.map((opportunity) => (
+            <JobPostingCard
+              key={opportunity._id}
+              jobRole={opportunity.title}
+              companyName={opportunity.companyName}
+              location={opportunity.location}
+              jobLink={opportunity.link}
+              description={opportunity.description}
+            />
+          ))}
+        </div>
       </div>
       {data && (
         <Pagination
