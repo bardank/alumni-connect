@@ -32,11 +32,8 @@ const Footer = () => {
           </p>
         </div>
         <div className="bg-gray-800 text-center">
-          <p className="text-center text-white py-2 ">
-            Designed by 6th sem SKIT students
-          </p>
-          <p className="text-center text-white py-2 ">
-            Maintained by Alumni Committee
+          <p className="text-center text-white py-2  ">
+            {`Designed by 6th sem SKIT students & Maintained by Alumni Committee SKIT`}
           </p>
         </div>
       </footer>

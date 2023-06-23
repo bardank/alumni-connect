@@ -13,7 +13,6 @@ export default function EditAlumniModal({ isOpen, onClose, alumniData }) {
   const { setNotification } = useNotification();
   const [inputData, setInputData] = useState({
     fullName: alumniData.fullName,
-    birthDate: alumniData.birthDate,
     email: alumniData.email,
     phoneNumber: alumniData.phoneNumber,
     currentAddress: alumniData.currentAddress,

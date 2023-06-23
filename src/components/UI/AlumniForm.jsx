@@ -38,15 +38,7 @@ const AlumniForm = () => {
               value={inputData.lastName}
               onChange={onChange}
             />
-            <Input
-              label="Date of Birth "
-              type="date"
-              id="birthDate"
-              name="birthDate"
-              placeholder="Date of birth "
-              value={inputData.birthDate}
-              onChange={onChange}
-            />
+
             <Input
               label=" Email "
               type="email"

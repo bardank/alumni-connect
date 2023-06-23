@@ -17,7 +17,6 @@ const EditAlumni = () => {
     firstName: "",
     middleName: "",
     lastName: "",
-    birthDate: "",
     email: "",
     phoneNumber: "",
     currentAddress: "",
@@ -132,15 +131,6 @@ const EditAlumni = () => {
                       name="lastName"
                       placeholder="Last Name"
                       value={inputData.lastName}
-                      onChange={onChange}
-                    />
-                    <Input
-                      label="Date of Birth "
-                      type="date"
-                      id="birthDate"
-                      name="birthDate"
-                      placeholder="Date of birth "
-                      value={inputData.birthDate}
                       onChange={onChange}
                     />
                     <Input

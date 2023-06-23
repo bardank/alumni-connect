@@ -18,7 +18,7 @@ const contributions = [
   {
     image: "./assests/Contribution/Megha.png",
     name: "Ms. Megha B S",
-    text: "Referred for the placements Conducted a workshop on Machine Learning",
+    text: "Referred for the placements, Conducted a workshop on Machine Learning",
   },
   {
     image: "./assests/Contribution/Pavan.png",
@@ -79,7 +79,7 @@ export default function App() {
         {contributions.map((item, i) => (
           <SwiperSlide key={i}>
             <div className=" border  p-5  bg-white rounded-lg shadow-lg  flex flex-col md:flex-col justify-center gap-5 items-center">
-              <div className="w-1/2 h-full bg-cover pt-20 flex justify-center items-center">
+              <div className="w-1/2 h-full bg-cover  flex justify-center items-center">
                 <div className=" ">
                   <img
                     className="rounded-full  object-cover h-28 w-28"
@@ -90,7 +90,7 @@ export default function App() {
               </div>
               <div className="w-100 h-auto p-5  rounded-xl flex flex-col justify-center items-center ">
                 <h4 className="text-lg font-bold mb-2">{item.name}</h4>
-                <h4 className="text-lg font-medium mb-2">Contributed as</h4>
+                {/* <h4 className="text-lg font-medium mb-2">Contributed as</h4> */}
                 <p>{item.text}</p>
               </div>
             </div>

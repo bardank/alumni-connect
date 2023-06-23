@@ -21,7 +21,6 @@ export default function Home() {
     firstName: "",
     middleName: "",
     lastName: "",
-    birthDate: "",
     email: "",
     phoneNumber: "",
     currentAddress: "",
@@ -74,7 +73,6 @@ export default function Home() {
       firstName: "",
       middleName: "",
       lastName: "",
-      birthDate: "",
       email: "",
       phoneNumber: "",
       currentAddress: "",
@@ -157,15 +155,7 @@ export default function Home() {
                     value={inputData.lastName}
                     onChange={onChange}
                   />
-                  <Input
-                    label="Date of Birth "
-                    type="date"
-                    id="birthDate"
-                    name="birthDate"
-                    placeholder="Date of birth "
-                    value={inputData.birthDate}
-                    onChange={onChange}
-                  />
+                  
                   <Input
                     label=" Email "
                     type="email"
