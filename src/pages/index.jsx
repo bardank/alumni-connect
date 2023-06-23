@@ -6,7 +6,17 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useRouter } from "next/router";
 import TextAnimation from "../components/TextAnimation";
 import TestimonialSlider from "../components/TestimonialSlider";
+import Lottie from "react-lottie";
+import animationData from "../assets/conect-animation.json";
 
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice",
+  },
+};
 export default function Home() {
   const router = useRouter();
 
@@ -99,7 +109,7 @@ To provide career development guidance."
       <div className="flex justify-center items-center py-16 h-full text-black pb-6 ">
         <h5 className="text-3xl font-semibold">Gallery</h5>
       </div>
-      <div className=" gallary flex gap-2  ">
+      <div className="  grid grid-cols-2 md:grid-cols-4 gap-2 flex-wrap px-4 lg:px-0  ">
         <GalleryImage
           src="./assests/gallary/gallaryImage3.jpeg"
           alt="gallery-pic"
@@ -126,7 +136,10 @@ To provide career development guidance."
           Join the Alumni Association: Register Today!
         </h5>
       </div>
-      <div className="flex place-items-center  flex-auto justify-items-center gap-10 place-content-center ">
+      <div className="flex flex-col md:flex-row place-items-center  flex-auto justify-items-center gap-10 place-content-center ">
+        <div>
+          <Lottie options={defaultOptions} height={200} width={200} />
+        </div>
         <div className="w-80 pb-8">
           <p className="text-center pb-4">
             Welcome to the alumni community of SKIT. As a member of the alumni
@@ -159,7 +172,7 @@ const GalleryImage = ({ src, alt }) => {
   return (
     <div>
       <img
-        className="w-[450px] h-full object-cover"
+        className="w-full h-full object-cover"
         src={src}
         alt={alt}
         // className="w-150 h-150 object-cover"

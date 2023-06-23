@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import Select from "../components/UI/Select";
@@ -11,6 +11,8 @@ import { useNotification } from "../customHooks/useNotification";
 import { uuid } from "uuidv4";
 import PageLoader from "next/dist/client/page-loader";
 import PageLayout from "@/layout/PageLayout";
+import { useModal } from "@/customHooks/useModal";
+import SuccessRegistration from "@/modals/SuccessRegistration";
 
 function Registration() {
   const { setNotification } = useNotification();
@@ -29,12 +31,15 @@ function Registration() {
     branch: "CSE",
   });
 
+  const { openModal } = useModal();
+
   const [createAlumni, { loading, error, data }] = useMutation(CREATE_ALUMNI, {
     variables: {},
     onCompleted: (data) => {
       if (data.createAlumni.success) {
-        setNotification(uuid(), "Successfull Submitted", "Success", 5000);
+        setNotification(uuid(), "Successfull Submitted", "Success", 3000);
         resetForm();
+        openModal(<SuccessRegistration />);
       } else {
         setNotification(uuid(), "Something went Wrong", "Error", 3000);
       }

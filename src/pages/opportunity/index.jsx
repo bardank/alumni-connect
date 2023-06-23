@@ -9,7 +9,7 @@ import Button from "../../components/UI/Button";
 import PageLayout from "../../layout/PageLayout";
 import { useRouter } from "next/router";
 import { useModal } from "@/customHooks/useModal";
-import ConfirmationModal from "@/modals/confirmationModal";
+import ConfirmationModal from "@/modals/SuccessRegistration";
 
 export default function Opportunity() {
   const [queryData, setQUeryData] = useState({
