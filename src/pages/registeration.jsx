@@ -9,13 +9,13 @@ import { useMutation } from "@apollo/client";
 import CREATE_ALUMNI from "../graphql/mutation/CREATE_ALUMNI.JSX";
 import { useNotification } from "../customHooks/useNotification";
 import { uuid } from "uuidv4";
+import PageLoader from "next/dist/client/page-loader";
+import PageLayout from "@/layout/PageLayout";
 
 export default function Home() {
   const { setNotification } = useNotification();
   const [inputData, setInputVariable] = useState({
-    firstName: "",
-    middleName: "",
-    lastName: "",
+    fullName: "",
     birthDate: "",
     email: "",
     phoneNumber: "",
@@ -51,9 +51,7 @@ export default function Home() {
 
   const resetForm = () => {
     setInputVariable({
-      firstName: "",
-      middleName: "",
-      lastName: "",
+      fullName: "",
       birthDate: "",
       email: "",
       phoneNumber: "",
@@ -76,7 +74,7 @@ export default function Home() {
     createAlumni({
       variables: {
         createAlumniInput: {
-          fullName: `${inputData.firstName.trim()} ${inputData.middleName.trim()} ${inputData.lastName.trim()}`,
+          fullName: inputData.fullName,
           currentAddress: inputData.currentAddress,
           currentPosition: inputData.designation,
           email: inputData.email,
@@ -96,8 +94,7 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <Navbar />
+    <PageLayout>
       <div className="px-8">
         <div className="">
           <h4 className="text-center font-semibold text-2xl pt-6 ">
@@ -107,34 +104,16 @@ export default function Home() {
             <div className=" pb-4 ">
               <div className=" ">
                 <FormHeading title="Personal Details" />
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                   <Input
-                    label="First Name"
+                    label="Full Name"
                     type="text"
-                    name="firstName"
-                    placeholder="First Name"
-                    value={inputData.firstName}
+                    name="fullName"
+                    placeholder="Fulll Name"
+                    value={inputData.fullName}
                     onChange={onChange}
                   />
 
-                  <Input
-                    label="Middle Name"
-                    type="text"
-                    id="middleName"
-                    name="middleName"
-                    placeholder="middle Name"
-                    value={inputData.middleName}
-                    onChange={onChange}
-                  />
-                  <Input
-                    label="Last Name"
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Last Name"
-                    value={inputData.lastName}
-                    onChange={onChange}
-                  />
                   <Input
                     label="Date of Birth "
                     type="date"
@@ -176,7 +155,7 @@ export default function Home() {
               </div>
               <FormHeading title="Academic Details:" />
 
-              <div className="grid grid-cols-4 gap-4 ">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
                 <Input
                   label="USN "
                   type="text"
@@ -200,7 +179,7 @@ export default function Home() {
                 <Select label="Branch" name="branch" onChange={onChange} />
               </div>
               <FormHeading title=" Present Working Details :" />
-              <div className="grid grid-cols-3 gap-4 ">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
                 <div className=" ">
                   <div className="flex align-middle  flex-row">
                     <h5 className="">Placement Provided by SKIT:</h5>
@@ -245,6 +224,7 @@ export default function Home() {
                   placeholder="organization "
                   value={inputData.organization}
                   onChange={onChange}
+                  required={false}
                 />
                 <Input
                   label="Current Position/Designation "
@@ -254,6 +234,7 @@ export default function Home() {
                   placeholder="eg: web Devloper "
                   value={inputData.designation}
                   onChange={onChange}
+                  required={false}
                 />
                 {/* <Input
                   label="  Upload offer letter / Appointment Letter "
@@ -273,6 +254,7 @@ export default function Home() {
                   value={inputData.suggestion}
                   onChange={onChange}
                   name="suggestion"
+                  required={false}
                 />
               </div>
             </div>
@@ -280,8 +262,7 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <Footer />
-    </div>
+    </PageLayout>
   );
 }
 
