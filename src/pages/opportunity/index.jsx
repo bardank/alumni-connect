@@ -67,9 +67,7 @@ export default function Opportunity() {
         <Button
           label={"Create Opportunity"}
           className="w-auto"
-          onClick={() => {
-            router.push("/create-opportunity");
-          }}
+          onClick={() => router.push("create-opportunity")}
         />
       </div>
     </PageLayout>

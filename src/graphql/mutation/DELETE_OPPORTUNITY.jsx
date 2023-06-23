@@ -1,14 +1,15 @@
-import {gql} from '@apollo/client';
+import { gql } from "@apollo/client";
 
 const DELETE_OPPORTUNITY = gql`
-mutation Mutation($deleteOpportunityId: String!) {
-  deleteOpportunity(id: $deleteOpportunityId) {
-    data {
-      link
+  mutation Mutation($deleteOpportunityId: String!) {
+    deleteOpportunity(id: $deleteOpportunityId) {
+      data {
+        link
+      }
+      message
+      success
     }
-    message
   }
-}
-`
+`;
 
 export default DELETE_OPPORTUNITY;

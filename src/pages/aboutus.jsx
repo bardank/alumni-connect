@@ -19,7 +19,7 @@ export default function Home() {
           </div>
           <div className=" p-4 md:px-10 rounded-md ">
             <div className="  bg-white rounded-lg font-normal   h-auto text-center   ">
-              <p className="text-center">
+              <p className="text-justify ">
                 The SKIT Alumni Association (SKITAA) was formally established in
                 the year 2016, owing to the painstaking efforts and initiative
                 of our beloved Principal Dr. Mahesha K. A seed committee was
@@ -28,8 +28,8 @@ export default function Home() {
                 alumni meet was organized in the year 2016.
               </p>
             </div>
-            <div className="  bg-white rounded-lg    h-auto text-center   ">
-              <p className=" flex text-center">
+            <div className="  bg-white rounded-lg    h-auto   ">
+              <p className=" flex text-justify mt-4">
                 SKITAA is conducting various activities for the Alumni. The
                 SKITAA is proud to say that its alumni are well settled
                 throughout the globe and are helping the current students by
@@ -37,8 +37,8 @@ export default function Home() {
                 and sharing their experiences in seminars and conferences.
               </p>
             </div>
-            <div className="  bg-white rounded-lg    h-auto text-center">
-              <p className="text-center">
+            <div className="  bg-white rounded-lg    h-auto text-left">
+              <p className="text-justify mt-4">
                 Alumni of SKIT in particular have excelled and acquired
                 positions of eminence in every field imaginable-from engineering
                 to management to finance, Renowned scientists, successful

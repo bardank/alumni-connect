@@ -1,8 +1,7 @@
 import React from "react";
-import FormHeading from "../UI/FormHeading";
-import Input from "./Input";
+import Input from "./UI/Input";
 import Select from "./Select";
-import TextArea from "./TextArea";
+import TextArea from "./UI/TextArea";
 import Button from "./Button";
 
 const AlumniForm = () => {
@@ -176,3 +175,11 @@ const AlumniForm = () => {
 };
 
 export default AlumniForm;
+
+const FormHeading = ({ title }) => {
+  return (
+    <div>
+      <h5 className="text-xl pb-3 underline">{title}</h5>
+    </div>
+  );
+};
