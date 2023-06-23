@@ -31,6 +31,7 @@ export default function Home() {
 
   const { loading, error, data } = useQuery(FETCH_ALUMNIS, {
     variables: { fetchAlumnis: queryData },
+    fetchPolicy: "no-cache", // "cache-first
     onCompleted: (data) => {
       setAlumniList(data.fetchAlumnis.data);
     },
@@ -52,7 +53,7 @@ export default function Home() {
       });
       if (data.deleteAlumni.success) {
         setNotification(uuid(), "Alumni deleted successfully", "Success", 3000);
-        setQUeryData({ count: 9, pageNo: 1 });
+        setQUeryData({ ...queryData });
       }
     } catch (error) {
       console.log(error);
