@@ -16,7 +16,6 @@ export default function Home() {
   const { setNotification } = useNotification();
   const [inputData, setInputVariable] = useState({
     fullName: "",
-    birthDate: "",
     email: "",
     phoneNumber: "",
     currentAddress: "",
@@ -52,7 +51,6 @@ export default function Home() {
   const resetForm = () => {
     setInputVariable({
       fullName: "",
-      birthDate: "",
       email: "",
       phoneNumber: "",
       currentAddress: "",
@@ -102,9 +100,9 @@ export default function Home() {
           </h4>
           <form className="pb-4 " onSubmit={(e) => handleRegisteration(e)}>
             <div className=" pb-4 ">
-              <div className=" ">
-                <FormHeading title="Personal Details" />
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className=" pt-4">
+                {/* <FormHeading title="Personal Details" /> */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-4">
                   <Input
                     label="Full Name"
                     type="text"
@@ -114,15 +112,6 @@ export default function Home() {
                     onChange={onChange}
                   />
 
-                  <Input
-                    label="Date of Birth "
-                    type="date"
-                    id="birthDate"
-                    name="birthDate"
-                    placeholder="Date of birth "
-                    value={inputData.birthDate}
-                    onChange={onChange}
-                  />
                   <Input
                     label=" Email "
                     type="email"
@@ -153,9 +142,9 @@ export default function Home() {
                   />
                 </div>
               </div>
-              <FormHeading title="Academic Details:" />
+              {/* <FormHeading title="Academic Details:" /> */}
 
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-6">
                 <Input
                   label="USN "
                   type="text"
@@ -178,8 +167,8 @@ export default function Home() {
 
                 <Select label="Branch" name="branch" onChange={onChange} />
               </div>
-              <FormHeading title=" Present Working Details :" />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
+              {/* <FormHeading title=" Present Working Details :" /> */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
                 <div className=" ">
                   <div className="flex align-middle  flex-row">
                     <h5 className="">Placement Provided by SKIT:</h5>
