@@ -82,7 +82,7 @@ export default function contactus() {
           height="100%"
           allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
       <ContactUsForm />

@@ -14,7 +14,7 @@ export default function Home() {
             <img
               src="./assests/Alumni_logo.jpg"
               alt="Image 3"
-              className="w-[400px]  h-[400px] md:h-[200px] object-cover m-2"
+              className="w-[400px]  h-[400px] md:h-[200px] object-contain m-2"
             />
           </div>
           <div className=" p-4 md:px-10 rounded-md">

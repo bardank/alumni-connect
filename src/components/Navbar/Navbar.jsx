@@ -45,7 +45,7 @@ const Navbar = () => {
           <NavbarItem link="/aboutus" title={"About us"} />
           <NavbarItem link="/alumni-directory" title={"Alumni Directory"} />
           <NavbarItem link="/activities" title={"Activities"} />
-          {/* <NavbarItem link="/opportunity" title={"Opportunity"} /> */}
+          <NavbarItem link="/opportunity" title={"Opportunity"} />
           <NavbarItem link="/contribution" title={"Contribution"} />
           <NavbarItem link="/contactus" title={"Contact Us"} />
         </ul>
@@ -103,7 +103,7 @@ export const NavbarItem = ({ title, link }) => {
   return (
     <a
       href={link}
-      className={`cursor-pointer text-center py-2 px-6 md:px-4 w-full lg:px-6 items-center hover:bg-green-300 h-full hover:text-customGray-dark  font-semibold text-xl flex justify-center ${
+      className={`cursor-pointer text-center py-2 px-6 md:px-4 w-full lg:px-6 items-center hover:bg-green-300 h-full hover:text-customGray-dark  font-semibold text-md flex justify-center ${
         isActive ? "bg-green-400 text-customGray-dark" : ""
       }`}
     >

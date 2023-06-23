@@ -61,7 +61,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="button-overlay pt-6">
-              <button className="bg-secondary  hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 m-10 rounded-3xl">
+              <button className="bg-secondary bg-opacity-60 hover:bg-blue-700 text-white font-bold py-2 px-4 w-56 m-10 rounded-3xl">
                 <a href="registeration" target="_blank">
                   Register now!
                 </a>
@@ -105,7 +105,7 @@ To provide career development guidance."
           alt="gallery-pic"
         />
         <GalleryImage src="./assests/gallary/img2.jpg" alt="gallery-pic" />
-        <GalleryImage src="./assests/gallary/pic3.jpg" alt="gallery-pic" />
+        <GalleryImage src="./assests/gallary/rakshita.jpg" alt="gallery-pic" />
         <GalleryImage src="./assests/gallary/pic4.jpg" alt="gallery-pic" />
       </div>
       <div className="text-center pt-4">
