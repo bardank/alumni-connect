@@ -82,13 +82,13 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="px-6 pt-8 ">
+        <div className="px-6 md:px-12 pt-8 w-screen">
           <div>
-            <h3 className="text-black  text-xl font-bold p-1">
+            <h3 className="text-black w-full text-xl font-bold p-1">
               Alumni Association Committee
             </h3>
-            <div className="table-container pt-6 mb-6 w-full overflow-x-scroll">
-              <table className="table-auto border-collapse  w-full border border-gray-300 rounded-lg  ">
+            <div className="table-container w-full pt-6 mb-6 overflow-x-scroll">
+              <table className="table-auto border-collapse w-full  border border-gray-300 rounded-lg  ">
                 <thead>
                   <tr className="bg-secondary">
                     <th className="px-4 text-white py-2 border-r border-white">
