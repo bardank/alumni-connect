@@ -36,7 +36,7 @@ const Footer = () => {
             Designed by 6th sem SKIT students
           </p>
           <p className="text-center text-white py-2 ">
-            Maintained by Alumni Committe
+            Maintained by Alumni Committee
           </p>
         </div>
       </footer>
