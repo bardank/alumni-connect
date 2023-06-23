@@ -40,7 +40,8 @@ export default function Home() {
             key={item._id}
             eventName={item.eventName}
             date={moment(item.date).format("Do MMMM YYYY")}
-            time={moment(item.date).format(" h:mm A")}
+            time={"9:30 pm"}
+            // time={moment(item.date).format(" h:mm A")}
             location={item.location}
           />
         ))}
