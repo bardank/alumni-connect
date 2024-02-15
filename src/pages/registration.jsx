@@ -13,7 +13,7 @@ import PageLoader from "next/dist/client/page-loader";
 import PageLayout from "@/layout/PageLayout";
 import { useModal } from "@/customHooks/useModal";
 import SuccessRegistration from "@/modals/SuccessRegistration";
-
+import axios from "../axios/index";
 function Registration() {
   const { setNotification } = useNotification();
   const [inputData, setInputVariable] = useState({
@@ -70,30 +70,40 @@ function Registration() {
     });
   };
 
-  const handleRegisteration = (e) => {
+  const handleRegisteration = async (e) => {
     e.preventDefault();
     console.log({ inputData });
+
     setNotification(uuid(), "Submitting", "Success", 3000);
-    createAlumni({
-      variables: {
-        createAlumniInput: {
-          fullName: inputData.fullName,
-          currentAddress: inputData.currentAddress,
-          currentPosition: inputData.designation,
-          email: inputData.email,
-          offerLetterLink: "",
-          phoneNumber: inputData.phoneNumber,
-          presentOrganization: inputData.organization,
-          suggestion: inputData.suggestion,
-          usn: inputData.usn,
-          yearOfCompletion: parseInt(inputData.graduationYear),
-          linkedIn: "",
-          isApproved: false,
-          branch: inputData.branch,
-          isPlacementProvidedBySkit: inputData.isPlacementProvidedBySkit,
+    const data = {
+      fullName: inputData.fullName,
+      currentAddress: inputData.currentAddress,
+      currentPosition: inputData.designation,
+      email: inputData.email,
+      offerLetterLink: "",
+      phoneNumber: inputData.phoneNumber,
+      presentOrganization: inputData.organization,
+      suggestion: inputData.suggestion,
+      usn: inputData.usn,
+      yearOfCompletion: parseInt(inputData.graduationYear),
+      linkedIn: "",
+      isApproved: false,
+      branch: inputData.branch,
+      isPlacementProvidedBySkit: inputData.isPlacementProvidedBySkit,
+    };
+    //convert data to json
+    const jsonData = JSON.stringify(data);
+    try {
+      await axios.post("/alumnis", jsonData, {
+        headers: {
+          "Content-Type": "application/json",
         },
-      },
-    });
+      });
+      setNotification(uuid(), "Successfull Submitted", "Success", 3000);
+      resetForm();
+    } catch (error) {
+      setNotification(uuid(), "Something went wrong", "Error", 3000);
+    }
   };
 
   return (
