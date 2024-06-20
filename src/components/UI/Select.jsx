@@ -24,6 +24,9 @@ export default function Select({ label, name, onChange, value }) {
           <option name={name} value="CIVIL">
             Civil Engg (Civil)
           </option>
+          <option name={name} value="MedE">
+            Medical Electronic (MedE)
+          </option>
         </select>
       </div>
     </div>
