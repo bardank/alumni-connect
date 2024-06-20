@@ -6,6 +6,7 @@ import ME from "../graphql/query/ME";
 import { useNotification } from "../customHooks/useNotification";
 import "../styles/globals.scss";
 import { useAuth } from "../customHooks/useAuth";
+import { Head } from "next";
 
 export default function App({ Component, pageProps }) {
   const notifications = useNotification((state) => state.notifications);
@@ -42,6 +43,23 @@ export default function App({ Component, pageProps }) {
   return (
     <ApolloProvider client={client}>
       <PopUpNotification notifications={notifications} />
+      <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                (function(w,d,s,l,i){
+                  w[l]=w[l]||[];
+                  w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+                  var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                  j.async=true;
+                  j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                  f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-KLQ77D7F');
+              `,
+          }}
+        />
+      </Head>
       <Component {...pageProps} />
     </ApolloProvider>
   );
