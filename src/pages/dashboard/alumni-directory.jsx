@@ -103,6 +103,8 @@ export default function Home() {
       </div>
       {data && (
         <Pagination
+          onPageChange={onPageChange}
+          queryData={data.fetchAlumnis}
           back={data.fetchAlumnis.back}
           next={data.fetchAlumnis.next}
         />

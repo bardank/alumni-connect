@@ -23,6 +23,7 @@ export const FETCH_ALUMNIS = gql`
       documentCount
       success
       next
+      pageNo
       back
     }
   }
