@@ -108,7 +108,7 @@ const AlumniProfile = ({
       </div>
       <div className="px-4">
         <div className="">
-          <p className="mb-2">{`USN : ${usn}`}</p>
+          <p className="mb-2 uppercase">{`USN : ${usn}`}</p>
           <p className="mb-2">{`Branch : ${branch}`}</p>
           <p className="mb-2">{`Graduated At :  ${yearOfCompletion} AD`}</p>
           <p className="mb-2 capitalize">{`Present Organization :  ${presentOrganization}`}</p>
